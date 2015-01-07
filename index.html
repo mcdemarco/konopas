@@ -29,8 +29,24 @@
 <meta name="msapplication-square150x150logo" content="data/arisia-planet.ie.png">
 <meta name="msapplication-square310x310logo" content="data/arisia-planet.ie.png">
 
+<!-- Info section styling; should be in the skin -->
+<style>
+#map { width: 100% !important; }
+#map td { text-align: center !important; padding: 6px 32px; }
+#map a, #map span { font-family: 'Oswald'; font-weight: 400; font-size: 1.2em; cursor: pointer; }
+#map a:hover, #map span:hover { text-decoration: underline; }
+#map tr:hover, .quick-ref tr:hover { background: inherit !important; }
+.quick-ref dt { margin: 6px 0 3px; }
+.quick-ref table { width: auto !important; border-spacing: 0; margin-bottom: 6px; }
+.quick-ref td { text-align: left !important; }
+#info_view .quick-ref td.c { text-align: center !important; }
+.quick-ref td:nth-child(2) { text-align: right !important; padding: 0 0 0 5px; }
+.quick-ref td:nth-child(3) { padding-left: 0; }
+</style>
+
 <title>Arisia 2015</title>
 
+</head>
 <body><div id="top"></div>
 <div id="load_disable"></div>
 
@@ -83,7 +99,7 @@
 </div>
 
 <div id="info_view" class="view">
-<p>This is the programme guide for <a href="http://www.arisia.org/">Arisia</a>. It should be suitable for use on most browsers and devices. It's an instance of <a href="http://konopas.org/">KonOpas</a>, an open-source project providing conventions with easy-to-use mobile-friendly guides.
+<p>This is the program guide for <a href="http://www.arisia.org/">Arisia</a> 2015. It should be suitable for use on most browsers and devices. It's an instance of <a href="http://konopas.org/">KonOpas</a>, an open-source project providing conventions with easy-to-use mobile-friendly guides.
 
 <p><div id="last-updated">Program and participant data were last updated <span></span>.</div>
 
@@ -101,6 +117,21 @@
 if (navigator.standalone) document.getElementById('install-instructions').style.display = 'none';
 </script>
 
+<h2>Maps</h2>
+<table id="map">
+	<tr>
+		<td><a class="popup-link" href="data/arisia-westin-3W.png">Mezzanine Level&nbsp;(3W)</a></td>
+		<td><a class="popup-link" href="data/arisia-westin-3E.png">Conference Level&nbsp;(3E)</a></td>
+	</tr>
+	<tr>
+		<td colspan="2"><a class="popup-link" href="data/arisia-westin-2.png">Lobby Level&nbsp;(2)</a></td>
+	</tr>	
+	<tr>
+		<td><a class="popup-link" href="data/arisia-westin-1W.png">Concourse Level&nbsp;(1W)</a></td>
+		<td><a class="popup-link" href="data/arisia-westin-1E.png">Galleria Level&nbsp;(1E)</a></td>
+	</tr>
+</table>
+
 <!-- SAMPLE SECTIONS FOR "INFO" VIEW, UNCOMMENT TO SEE
 <style>
 #map { width: 100% !important; }
@@ -115,15 +146,6 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 .quick-ref td:nth-child(2) { text-align: right !important; padding: 0 0 0 5px; }
 .quick-ref td:nth-child(3) { padding-left: 0; }
 </style>
-
-<h2>Sample Maps</h2>
-<table id="map">
-<tr><td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-3W.png">Mezzanine Level&nbsp;(3W)</a>
-    <td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-3E.png">Conference Level&nbsp;(3E)</a>
-<tr><td colspan="2"><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-2.png">Lobby Level&nbsp;(2)</a>
-<tr><td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1W.png">Concourse Level&nbsp;(1W)</a>
-    <td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1E.png">Galleria Level&nbsp;(1E)</a>
-</table>
 
 <h2>Sample Links</h2>
 <ul>
@@ -204,3 +226,5 @@ var konopas_set = {
 <script src="http://zambia.2015.arisia.org/konOpas.php"></script>
 <script src="konopas.min.js"></script>
 
+</body>
+</html>
