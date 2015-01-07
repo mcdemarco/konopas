@@ -8,7 +8,7 @@
 
 <!-- Android + favicon -->
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="shortcut icon" sizes="196x196" href="demo/favicon.196.png">
+<link rel="shortcut icon" sizes="196x196" href="data/arisia-planet.196.png">
 
 <!-- iOS -->
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
 <meta name="msapplication-square310x310logo" content="data/icon.ie.png">
 -->
 
-<title>KonOpas Sample Guide</title>
+<title>Arisia 2015</title>
 
 <body><div id="top"></div>
 <div id="load_disable"></div>
@@ -44,9 +44,9 @@
 <div id="banner">
 <div id="server_connect"></div>
 
-<h1><a href="#info" alt="CONVENTION" title="CONVENTION">
-<img id="title-small" src="demo/title.png" style="width: 240px;">
-<img id="title" src="demo/title.png" style="width: 200px;"></a></h1>
+<h1><a href="#info" alt="Arisia 2015" title="Arisia 2015">
+<img id="title-small" src="data/arisia-title-small.png" style="width: 240px;">
+<img id="title" src="data/arisia-lens.png" style="width: 145px; margin: 27px;"></a></h1>
 
 <ul id="tabs">
 <li id="tab_star"><a href="#star" data-txt>My con</a>
@@ -87,7 +87,7 @@
 </div>
 
 <div id="info_view" class="view">
-<p>This is the program guide for <a href="http://example.org/">CONVENTION</a>. It should be suitable for use on most browsers and devices. It's an instance of <a href="http://konopas.org/">KonOpas</a>, an open-source project providing conventions with easy-to-use mobile-friendly guides.
+<p>This is the programme guide for <a href="http://www.arisia.org/">Arisia</a>. It should be suitable for use on most browsers and devices. It's an instance of <a href="http://konopas.org/">KonOpas</a>, an open-source project providing conventions with easy-to-use mobile-friendly guides.
 
 <p><div id="last-updated">Program and participant data were last updated <span></span>.</div>
 
@@ -162,19 +162,49 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 
 </div><!-- /main -->
 
-<script> var konopas_set = {
-	'id': 'program',
-	'default_duration': 0,
-	'time_show_am_pm': true,
-	'show_all_days_by_default': true,
-	'use_server': false,
-	'filters': {
-		'day': {},
-		'area': {},
-		'tag': {}
-	}
+<script>
+var konopas_set = {
+    'id': 'sample',
+    'default_duration': 75,
+    'tag_categories': ['track', 'type'],
+    'time_show_am_pm': true,
+    'show_all_days_by_default': false,
+    'people_per_screen': 120,
+    'use_server': true,
+    'filters': {
+        'day': {},
+        'area': {
+            'loc_level': 0,
+            'labels': {
+                'all_areas': 'Everywhere',
+                'area': 'Other location',
+                'Galleria': 'Galleria (1E)',
+                '1W': 'Concourse (1W)',
+                '2':  'Lobby (2)',
+                '3E': 'Conference (3E)',
+                '3W': 'Mezzanine (3W)',
+                'ArisiaTV': '$ArisiaTV',
+                'Commonwealth Ballroom ABC': 'Commonwealth Ballroom',
+            },
+            'regexp': { 'Galleria': '^Galleria' },
+            'promote': ['3W', '3E', '2', '1W', 'Galleria'],
+            'exclude': ['^Galleria -', '^Gaming Table', '^Grand Prefunction$']
+        },
+        'tag': {
+            'categories': ['track', 'type'],
+            'labels': {
+                'all_tags': 'All tracks & types',
+                'Featured': 'Featured items',
+                'track': 'Track',
+                'type': 'Type'
+            },
+            'promote': ['Featured'],
+        }
+    }
 };
 </script>
+<!--<script src="demo/program.js"></script>
+<script src="demo/people.js"></script>-->
 <script src="http://zambia.2015.arisia.org/konOpas.php"></script>
-<!-- script src="demo/people.js"></script -->
 <script src="konopas.min.js"></script>
+
