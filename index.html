@@ -335,48 +335,6 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 		<dd>Hotel phone 617-502 4525 (x4525)</dd>
 </dl>
 
-
-<!-- SAMPLE SECTIONS FOR "INFO" VIEW, UNCOMMENT TO SEE
-<style>
-#map { width: 100% !important; }
-#map td { text-align: center !important; padding: 6px 32px; }
-#map a, #map span { font-family: 'Oswald'; font-weight: 400; font-size: 1.2em; cursor: pointer; }
-#map a:hover, #map span:hover { text-decoration: underline; }
-#map tr:hover, .quick-ref tr:hover { background: inherit !important; }
-.quick-ref dt { margin: 6px 0 3px; }
-.quick-ref table { width: auto !important; border-spacing: 0; margin-bottom: 6px; }
-.quick-ref td { text-align: left !important; }
-#info_view .quick-ref td.c { text-align: center !important; }
-.quick-ref td:nth-child(2) { text-align: right !important; padding: 0 0 0 5px; }
-.quick-ref td:nth-child(3) { padding-left: 0; }
-</style>
-
-<h2>Sample Links</h2>
-<ul>
-<li><a href="http://example.com/">Newsletter</a>
-<li><a href="http://example.com/">Restaurant Guide</a> (PDF, 6MB)
-<li><a href="http://example.com/">Progress Report 5</a> (web page)
-<li><a href="http://example.com/">Code of Conduct</a> (PDF)
-</ul>
-
-<h2>Sample Quick Reference</h2>
-<dl class="quick-ref">
-<dt><b>Access/Handicapped Services</b>: see Info Desk near elevators
-
-<dt><b>Art Show</b>: Harbor Ballroom II/III (3E)
-<dd><table>
-<tr><td>Friday<td>6pm–<td>9pm
-<tr><td>Saturday<td>10am–<td>6pm, 8pm–10pm
-<tr><td>Sunday<td>10am–<td>1:30pm
-</table>
-<b>Sales Pickup / Artist Checkout</b>: Sunday 3:30pm–7:30pm<br>
-<b>Voice Auction</b>: Sunday 4:30pm<br>
-<b>Sales Pickup / Artist Checkout</b>: Monday 10am–1pm
-
-<dt><b>...</b>
-</dl>
--->
-
 </div>
 
 
@@ -394,22 +352,20 @@ var konopas_set = {
     'people_per_screen': 120,
     'use_server': true,
     'filters': {
-        'day': {},
         'area': {
             'loc_level': 0,
             'labels': {
                 'all_areas': 'Everywhere',
                 'area': 'Other location',
-                'Galleria': 'Galleria (1E)',
                 '1W': 'Concourse (1W)',
-                '2':  'Lobby (2)',
+                '2E': 'Marina (2E)',
+                '2W': 'Lobby (2W)',
                 '3E': 'Conference (3E)',
                 '3W': 'Mezzanine (3W)',
                 'ArisiaTV': '$ArisiaTV',
                 'Commonwealth Ballroom ABC': 'Commonwealth Ballroom',
             },
-            'regexp': { 'Galleria': '^Galleria' },
-            'promote': ['3W', '3E', '2', '1W', 'Galleria'],
+            'promote': ['3W', '3E', '2W', '2E', '1W'],
             'exclude': ['^Galleria -', '^Gaming Table', '^Grand Prefunction$']
         },
         'tag': {
@@ -425,9 +381,7 @@ var konopas_set = {
     }
 };
 </script>
-<!--<script src="demo/program.js"></script>
-<script src="demo/people.js"></script>-->
-<script src="http://zambia.2015.arisia.org/konOpas.php"></script>
+<script src="data/arisia2015.js"></script>
 <script src="konopas.min.js"></script>
 
 </body>
