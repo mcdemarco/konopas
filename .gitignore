@@ -4,3 +4,5 @@ node_modules
 skin/skin.css
 tmp
 *.log
+
+data/arisia2015.js
