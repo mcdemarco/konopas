@@ -1,17 +1,17 @@
 CACHE MANIFEST
-# [insert mod-timestamp here]
+# Wed Jan 14 19:29:00 EST 2015
 
 CACHE:
-data/program.js
-data/people.js
+data/arisia2015.js
 konopas.min.js
 skin/skin.css
 skin/icons.png
 skin/Roboto300.ttf
 skin/Roboto500.ttf
 skin/OpenSans-Semibold.ttf
-favicon.ico
-data/title.png
+data/arisia-favicon.ico
+data/arisia-title-small.png
+data/arisia-lens.png
 
 NETWORK:
 *
