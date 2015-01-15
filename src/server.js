@@ -31,6 +31,8 @@ KonOpas.Server.prototype.disconnect = function() {
 	this.connected = false;
 	if (this.el) this.el.innerHTML = '<div id="server_info">' + i18n.txt('Not connected') + '</div>';
 	document.body.classList.remove('logged-in');
+	//Suppress server errors.
+	this.err_el = true;
 }
 
 KonOpas.Server.prototype.logout = function(ev) {
