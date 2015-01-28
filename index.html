@@ -171,7 +171,35 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 	'filters': {
 		'day': {},
 		'area': {},
-		'tag': {}
+		'tag': {
+			'min_count': 5,
+			'categories': ['type'],
+			'labels': {
+				'all_tags': 'All tags & types',
+				'tag': 'Select tag',
+				'type': 'Select type',
+				'type:display': 'Displays',
+				'type:Kaffeeklatsch': 'Kaffeeklatsches',
+				'type:Literary Beer': 'Literary Beers',
+				'type:Reading': 'Readings',
+				'type:Signing': 'Signings'
+			},
+			'promote': [],
+			'set_category': {
+				'Artist In Residence': 'type',
+				'Concert': 'type',
+				'Dances': 'type',
+				'Plays': 'type',
+				'TV Screenings': 'type',
+				'Writers Workshop': 'type',
+			},
+			'regexp': {
+				'type:Kaffeeklatsch': '^Kaffeeklatsch',
+				'type:Literary Beer': '^Literary Beer',
+				'type:Reading': '^Reading:',
+				'type:Signing': '^Signing'
+			}
+		}
 	}
 };
 </script>
