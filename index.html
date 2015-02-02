@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="skin/skin.css">
 <meta name="HandheldFriendly" content="true">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
 <!-- Android + favicon -->
 <meta name="mobile-web-app-capable" content="yes">
@@ -34,6 +34,30 @@
 -->
 
 <title>Boskone Sample Guide</title>
+<style>
+/* fixes for area/tag popup list running offscreen on small screens
+.popup-title {
+	margin:0;
+}
+ */
+.popup {
+	max-height:84%;
+}
+/* handle our crazy long area names in a hacky way */
+ul#area0 li {
+	width:300px;
+}
+div.popup-link.selected {
+	max-width:150px;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+/* just some local style */
+#foodSubUL {
+	list-style-type: none;
+}
+</style>
 
 <body><div id="top"></div>
 <div id="load_disable"></div>
