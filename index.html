@@ -33,8 +33,12 @@
 <meta name="msapplication-square310x310logo" content="data/icon.ie.png">
 -->
 
-<title>Boskone Sample Guide</title>
 <style>
+span.free {
+	font-style: italic;
+	color: red;
+	padding-left: 3px;
+}
 /* fixes for area/tag popup list running offscreen on small screens
 .popup-title {
 	margin:0;
@@ -58,6 +62,8 @@ div.popup-link.selected {
 	list-style-type: none;
 }
 </style>
+
+<title>Boskone 52 Guide</title>
 
 <body><div id="top"></div>
 <div id="load_disable"></div>
@@ -144,40 +150,92 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 .quick-ref td:nth-child(3) { padding-left: 0; }
 </style>
 
-<h2>Sample Maps</h2>
+<h2>Maps</h2>
 <table id="map">
-<tr><td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-3W.png">Mezzanine Level&nbsp;(3W)</a>
-    <td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-3E.png">Conference Level&nbsp;(3E)</a>
-<tr><td colspan="2"><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-2.png">Lobby Level&nbsp;(2)</a>
-<tr><td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1W.png">Concourse Level&nbsp;(1W)</a>
-    <td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1E.png">Galleria Level&nbsp;(1E)</a>
+	<tr><td><a class="popup-link" href="http://schedule.arisia.org/data/arisia-westin-3E.png">Harbor Wing Upper Level&nbsp;(3E)</a></td></tr>
+	<tr><td><a class="popup-link" href="http://schedule.arisia.org/data/arisia-westin-2.png">Lobby Level&nbsp;(2)</a></td></tr>
+	<tr><td><a class="popup-link" href="http://schedule.arisia.org/data/arisia-westin-1E.png">Harbor Wing Lower Level (Galleria)&nbsp;(1E)</a></td></tr>
 </table>
 
-<h2>Sample Links</h2>
+<h2>Quick Links</h2>
 <ul>
-<li><a href="http://example.com/">Newsletter</a>
-<li><a href="http://example.com/">Restaurant Guide</a> (PDF, 6MB)
-<li><a href="http://example.com/">Progress Report 5</a> (web page)
-<li><a href="http://example.com/">Code of Conduct</a> (PDF)
+	<li><a href="http://www.nesfa.org/boskone/artshow.html">Artists</a></li>
+	<li><a href="http://www.nesfa.org/boskone/dealers.html">Dealers</a></li>
+	<li>Food: 
+		<ul id="foodSubUL">
+			<li><a href="http://www.nesfa.org/boskone/food.html">Hotel Food & Delivery Options</a></li>
+			<li><a href="http://www.arisia.org/sites/default/files/A15_RestGuide_FinalSpreads01.pdf">Restaurant Guide</a> (PDF, 6MB)</li>
+		</ul>
+	<li><a href="http://www.nesfa.org/boskone/progress-reports.html">Progress Reports</a></li>
+	<li><a href="http://www.nesfa.org/boskone/codeofconduct.html">Code of Conduct</a></li>
 </ul>
 
-<h2>Sample Quick Reference</h2>
+<h2>Quick Reference</h2>
 <dl class="quick-ref">
-<dt><b>Access/Handicapped Services</b>: see Info Desk near elevators
-
-<dt><b>Art Show</b>: Harbor Ballroom II/III (3E)
-<dd><table>
-<tr><td>Friday<td>6pm–<td>9pm
-<tr><td>Saturday<td>10am–<td>6pm, 8pm–10pm
-<tr><td>Sunday<td>10am–<td>1:30pm
-</table>
-<b>Sales Pickup / Artist Checkout</b>: Sunday 3:30pm–7:30pm<br>
-<b>Voice Auction</b>: Sunday 4:30pm<br>
-<b>Sales Pickup / Artist Checkout</b>: Monday 10am–1pm
-
-<dt><b>...</b>
+	<dt><b>Anime</b>&nbsp;(See Films)</dt>
+	<dt><b>Art Show</b> Galleria</dt>
+	<dd>Fri 6:00p - 11:00p</dd>
+	<dd>Sat 10:00a - 9:00p</dd>
+	<dd>Sun 10:00a - Noon</dd>
+	<dd>Sun Noon Closeout</dd>
+	<dd>Sun 1:00p - 3:00p Sales</dd>
+	<dt><b>Children</b> (see DragonsLair)</dt>
+	<dt><b>Coat Check</b></dt>
+	<dd>Needs info</dd>
+	<dt><b>Con Suite</b> Galleria</dt>
+	<dd>Fri 4:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Fri 6:00p - 1:00a</dd>
+	<dd>Sat 10:00a - 1:00a</dd>
+	<dd>Sun 10:00a - 4:00p</dd>
+	<dt><b>Dead Dog Party</b> Galleria</dt>
+	<dd>Sun after teardown</dd>
+	<dt><b>Dealers Room</b> Galleria</dt>
+	<dd>Fri 5:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Fri 6:00p - 8:00p</dd>
+	<dd>Sat 10:00a - 6:00p</dd>
+	<dd>Sun 10:00a - 3:00p</dd>
+	<dt><b>DragonsLair</b> Galleria</dt>
+	<dd>Fri 6:00p - 9:00p</dd>
+	<dd>Sat 9:00 - Noon</dd>
+	<dd>Sat 1:00p - 5:00p</dd>
+	<dd>Sat 7:00p - 9:00p</dd>
+	<dd>Sun 9:00a - 2:00p</dd>
+	<dt><b>Fan Tables</b> Galleria Foyer</dt>
+	<dd>Fri 3:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Sat 11:00a - 6:00p</dd>
+	<dd>Sun 11:00a - 3:00p</dd>
+	<dt><b>Filking</b> Marina 3</dt>
+	<dd>Fri 4:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Fri 6:00p - ? (after Midnight)</dd>
+	<dd>Sat 10:00a - ? (after Midnight)</dd>
+	<dd>Sun 10:00a - 4:00p</dd>
+	<dt><b>Films</b> Carlton</dt>
+	<dd>Fri 2:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Fri 6:00p - 1:30a</dd>
+	<dd>Sat 9:00a - 1:30a</dd>
+	<dd>Sun 9:00a - 3:00p</dd>
+	<dt><b>Gaming</b> Marina 1</dt>
+	<dd>Fri 5:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Fri 6:00p - Midnight</dd>
+	<dd>Sat 10:00a - Midnight</dd>
+	<dd>Sun 10:00a - 3:00p</dd>
+	<dt><b>Hotels</b></dt>
+	<dd>Westin main: 617-532-4600</dd>
+	<dd>Renaissance main: 617-338-4111</dd>
+	<dt><b>Information</b> Galleria</dt>
+	<dd>Fri 3:00p - 9:00p</dd>
+	<dd>Sat 10:00a - 9:00p</dd>
+	<dd>Sun 10:00a - 3:00p</dd>
+	<dt><b>Kids</b> (see DragonsLair)</dt>
+	<dt><b>Quick Sale</b> Galleria</dt>
+	<dd>Sat Noon - 9:00p</dd>
+	<dd>Sun 10:00a - Noon</dd>
+	<dt><b>Registration</b> 2nd floor, Harbor Foyer</dt>
+	<dd>Fri 3:00p - 8:30p</dd>
+	<dd>Sat 9:00a - 6:00p</dd>
+	<dd>Sun 9:00a - Noon</dd>
+	<dt><b>Volunteers</b> (see Information)</dt>
 </dl>
-<!-- -->
 
 </div>
 
