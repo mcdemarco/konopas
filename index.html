@@ -34,16 +34,7 @@
 -->
 
 <style>
-span.free {
-	font-style: italic;
-	color: red;
-	padding-left: 3px;
-}
-/* fixes for area/tag popup list running offscreen on small screens
-.popup-title {
-	margin:0;
-}
- */
+/* fix for area/tag popup list running offscreen on small screens */
 .popup {
 	max-height:84%;
 }
@@ -51,15 +42,20 @@ span.free {
 ul#area0 li {
 	width:300px;
 }
-div.popup-link.selected {
+ul#area div.popup-link.selected {
 	max-width:150px;
 	white-space:nowrap;
-	overflow:hidden;
+	overflow-x:hidden;
 	text-overflow:ellipsis;
 }
 /* just some local style */
 #foodSubUL {
 	list-style-type: none;
+}
+span.free {
+	font-style: italic;
+	color: red;
+	padding-left: 3px;
 }
 </style>
 
