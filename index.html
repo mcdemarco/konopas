@@ -57,6 +57,25 @@ span.free {
 	color: red;
 	padding-left: 3px;
 }
+
+/* maps and other info */
+#map { width: 100% !important; }
+#map td { text-align: center !important; padding: 6px 32px; }
+#map a, #map span { font-family: 'Oswald'; font-weight: 400; font-size: 1.2em; cursor: pointer; }
+#map a:hover, #map span:hover { text-decoration: underline; }
+#map tr:hover, .quick-ref tr:hover { background: inherit !important; }
+#map a:after {content: " Map";}
+#map ul {list-style-type: none; margin:0; padding:0;display:inline;}
+#map ul li:after {content: ", ";}
+#map ul li:last-child:after {content: ". ";}
+#map li {display:inline;}
+
+.quick-ref dt { margin: 6px 0 3px; }
+.quick-ref table { width: auto !important; border-spacing: 0; margin-bottom: 6px; }
+.quick-ref td { text-align: left !important; }
+#info_view .quick-ref td.c { text-align: center !important; }
+.quick-ref td:nth-child(2) { text-align: right !important; padding: 0 0 0 5px; }
+.quick-ref td:nth-child(3) { padding-left: 0; }
 </style>
 
 <title>Boskone 52 Guide</title>
@@ -132,26 +151,49 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 </script>
 
 <!-- SAMPLE SECTIONS FOR "INFO" VIEW, UNCOMMENT TO SEE -->
-<style>
-#map { width: 100% !important; }
-#map td { text-align: center !important; padding: 6px 32px; }
-#map a, #map span { font-family: 'Oswald'; font-weight: 400; font-size: 1.2em; cursor: pointer; }
-#map a:hover, #map span:hover { text-decoration: underline; }
-#map tr:hover, .quick-ref tr:hover { background: inherit !important; }
-.quick-ref dt { margin: 6px 0 3px; }
-.quick-ref table { width: auto !important; border-spacing: 0; margin-bottom: 6px; }
-.quick-ref td { text-align: left !important; }
-#info_view .quick-ref td.c { text-align: center !important; }
-.quick-ref td:nth-child(2) { text-align: right !important; padding: 0 0 0 5px; }
-.quick-ref td:nth-child(3) { padding-left: 0; }
-</style>
+
 
 <h2>Maps</h2>
+
+<p>All Boskone activity is on the <b>Harbor Wing</b> side of the hotel, on your left as you walk in the main door of the Westin.</p>
+
 <table id="map">
-	<tr><td><a class="popup-link" href="http://schedule.arisia.org/data/arisia-westin-3E.png">Harbor Wing Upper Level&nbsp;(3E)</a></td></tr>
-	<tr><td><a class="popup-link" href="http://schedule.arisia.org/data/arisia-westin-2.png">Lobby Level&nbsp;(2)</a></td></tr>
-	<tr><td><a class="popup-link" href="http://schedule.arisia.org/data/arisia-westin-1E.png">Harbor Wing Lower Level (Galleria)&nbsp;(1E)</a></td></tr>
+	<tr><td><a class="popup-link" href="data/HarborWing2ndFloor-2015.png">Upper Level (Mezzanine)</a></td></tr>
+	<tr><td>
+		<ul>
+			<li>Registration</li>
+			<li>Anime &amp; Film</li>
+			<li>Program</li>
+		</ul>
+	</td></tr>
+	<tr><td><a class="popup-link" href="data/LobbyMarinaBallroom-2015.png">Lobby Level (Marina Ballroom)</a></td></tr>
+	<tr><td>
+		<ul>
+			<li>Program</li>
+			<li>Gaming</li>
+			<li>Filking</li>
+			<li>Coat Check</li>
+		</ul>
+	</td></tr>
+	<tr><td><a class="popup-link" href="data/Galleria-2015.png">Lower Level (Galleria)</a></td></tr>
+	<tr><td>
+		<ul>
+			<li>Art Show</li>
+			<li>Autographing</li>
+			<li>Con Suite</li>
+			<li>Dealers Room</li>
+			<li>Discussion Groups</li>
+			<li>DragonsLair</li>
+			<li>Fan Tables</li>
+			<li>Information</li>
+			<li>Kaffeklatches</li>
+			<li>Office</li>
+			<li>Program Ops</li>
+			<li>Volunteers</li>
+		</ul>
+	</td></tr>
 </table>
+
 
 <h2>Quick Links</h2>
 <ul>
@@ -176,8 +218,8 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 	<dd>Sun Noon Closeout</dd>
 	<dd>Sun 1:00p - 3:00p Sales</dd>
 	<dt><b>Children</b> (see DragonsLair)</dt>
-	<dt><b>Coat Check</b></dt>
-	<dd>Needs info</dd>
+	<dt><b>Coat Check</b> (opposite Marina III)</dt>
+	<dd>TBA</dd>
 	<dt><b>Con Suite</b> Galleria</dt>
 	<dd>Fri 4:00p - 6:00p <span class="free">Free</span></dd>
 	<dd>Fri 6:00p - 1:00a</dd>
