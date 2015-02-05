@@ -19,10 +19,10 @@ PRECACHE_FILES = $(JS_MIN) $(CSS) $(wildcard skin/*.ttf)
 
 
 dev: $(CSS) $(JS_DEV)
-	@sed -i 's/<script src="$(JS_MIN)">/<script src="$(JS_DEV)">/' index.html
+	@sed -i .bak 's/<script src="$(JS_MIN)">/<script src="$(JS_DEV)">/' index.html
 
 prod: $(CSS) $(JS_MIN)
-	@sed -i 's/<script src="$(JS_DEV)">/<script src="$(JS_MIN)">/' index.html
+	@sed -i .bak 's/<script src="$(JS_DEV)">/<script src="$(JS_MIN)">/' index.html
 
 watch:
 	watchman watch $(shell pwd)

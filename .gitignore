@@ -5,3 +5,4 @@ node_modules
 skin/skin.css
 tmp
 *.log
+*.bak
