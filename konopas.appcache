@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Fri Jan  1 21:14:01 EST 2016
+# Tue Jan 12 20:43:01 EST 2016
 
 CACHE:
 data/arisia2016.js
@@ -12,6 +12,11 @@ skin/OpenSans-Semibold.ttf
 data/arisia-favicon.ico
 data/arisia-title-small.png
 data/arisia-lens.png
+data/arisia-westin-1E.png
+data/arisia-westin-1W.png
+data/arisia-westin-2.png
+data/arisia-westin-3E.png
+data/arisia-westin-3W.png
 
 NETWORK:
 *
