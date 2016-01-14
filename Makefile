@@ -1,64 +1,77 @@
-LESSC = lessc --clean-css
-LESS_SRC = skin/main.less
-CSS = skin/skin.css
+BIN = ./node_modules/.bin
 
-MSGFORMAT = messageformat
-LC ?= en
-comma := ,
-LC_SEP = $(subst $(comma), ,$(LC))
-LC_GLOB = $(if $(findstring $(comma),$(LC)),{$(LC)},$(LC))
-I18N_JS = i18n/$(LC).js
-I18N_JSON = $(addprefix i18n/,$(addsuffix .json,$(LC_SEP)))
+DEV = dist/dev.html dist/konopas.js dist/skin/konopas.css
+PROD = dist/index.html dist/konopas.min.js dist/skin/konopas.min.css
+SKIN = $(addprefix dist/, $(wildcard skin/*.png skin/*.ttf))
+STATIC = $(SKIN) dist/favicon.ico
 
-JS_FILES = src/polyfill.js $(I18N_JS) src/util.js src/server.js src/stars.js src/item.js src/prog.js src/part.js src/info.js src/app.js
-JS_PREFACE = src/preface.js
-JS_DEV = konopas.js
-JS_MIN = konopas.min.js
+MAKEFLAGS += -r
+.SUFFIXES:
+.PHONY: all dev LC clean precache watch
 
-PRECACHE_FILES = $(JS_MIN) $(CSS) $(wildcard skin/*.ttf)
+all: LC $(DEV) $(PROD) $(STATIC)
+dev: LC $(DEV) $(STATIC)
+
+clean: ; rm -rf tmp/ dist/
 
 
-dev: $(CSS) $(JS_DEV)
-	@sed -i 's/<script src="$(JS_MIN)">/<script src="$(JS_DEV)">/' index.html
+tmp dist dist/skin: ; mkdir -p $@
 
-prod: $(CSS) $(JS_MIN)
-	@sed -i 's/<script src="$(JS_DEV)">/<script src="$(JS_MIN)">/' index.html
+tmp/LC: | tmp ; echo 'en' > $@
+LC: | tmp/LC
+	$(eval LCprev := $(shell cat tmp/LC))
+	$(eval LC ?= $(LCprev))
+	@if [ "$(LC)" != "$(LCprev)" ]; then rm -f tmp/i18n.js; echo "$(LC)" > tmp/LC; fi
+
+tmp/i18n.js: src/i18n/*.json | tmp
+	$(eval LCglob := @($(shell echo $(LC) | tr ',' '|')).json)
+	$(BIN)/messageformat --locale $(LC) --include '$(LCglob)' src/i18n/ $@
+
+tmp/preface.js: LICENSE | tmp
+	echo '/**' > $@
+	sed 's/^/ * /' $< >> $@
+	echo ' */' >> $@
+	echo '"use strict";' >> $@
+
+tmp/konopas.js: tmp/i18n.js src/*.js | tmp
+	cat $^ > $@
+
+dist/konopas.js: tmp/preface.js tmp/konopas.js | dist
+	cat $^ > $@
+
+dist/konopas.min.js: tmp/preface.js tmp/konopas.js | dist
+	$(BIN)/uglifyjs $(word 2, $^) --compress --mangle \
+	| sed 's/\([^,;:?+(){}\/]*[^\w ",;{}]\)\(function\( \w\+\)\?(\)/\n\1\2/g' \
+	| cat $< - \
+	> $@
+
+dist/dev.html: index.html | dist
+	cp $< $@
+
+dist/index.html: index.html | dist
+	sed 's/"konopas.js"/"konopas.min.js"/;s/"skin\/konopas.css"/"skin\/konopas.min.css"/' $< > $@
+
+dist/favicon.ico: skin/favicon.ico | dist
+	cp $< $@
+
+dist/skin/konopas.css: skin/*.less | dist/skin
+	$(BIN)/lessc skin/main.less $@
+
+dist/skin/konopas.min.css: skin/*.less | dist/skin
+	$(BIN)/lessc skin/main.less --clean-css="--s0 --advanced --compatibility=ie8" $@
+
+dist/skin/%: skin/% | dist/skin
+	cp $< $@
+
+
+precache: $(addsuffix .gz, $(PROD) $(wildcard dist/skin/*.ttf))
+%.gz: % ; gzip -c $^ > $@
+
 
 watch:
 	watchman watch $(shell pwd)
-	watchman -- trigger $(shell pwd) ko-css 'skin/*.less' -- make $(CSS)
-	watchman -- trigger $(shell pwd) ko-lc 'i18n/*.json' -- make $(I18N_JS)
-	watchman -- trigger $(shell pwd) ko-js '$(JS_FILES)' -- make $(JS_DEV)
+	watchman -- trigger $(shell pwd) ko-css 'skin/*.less' -- make dist/skin/konopas.css
+	watchman -- trigger $(shell pwd) ko-lc 'src/i18n/*.json' -- LC=$(LC) make tmp/i18n.js dist/konopas.js
+	watchman -- trigger $(shell pwd) ko-js 'src/*.js' -- make dist/konopas.js
 
 
-$(CSS): $(wildcard skin/*.less)
-	$(LESSC) $(LESS_SRC) $@
-
-
-$(I18N_JS): $(I18N_JSON)
-	$(MSGFORMAT) --locale $(LC) --include '$(LC_GLOB).json' i18n/ $@
-
-
-$(JS_DEV): $(JS_FILES)
-	echo '\n"use strict";\n' | cat $(JS_PREFACE) - $^ > $@
-
-$(JS_MIN): $(JS_DEV)
-	curl -X POST -s --data-urlencode "input@$^" http://javascript-minifier.com/raw \
-	| sed 's/\([^,;:?+(){}\/]*[^\w ",;{}]\)\(function\( \w\+\)\?(\)/\n\1\2/g' \
-	| cat $(JS_PREFACE) - \
-	> $@
-
-precache: $(addsuffix .gz, $(PRECACHE_FILES)) ;
-
-%.gz: %
-	gzip -c $^ > $@
-
-
-clean:
-	rm -f $(JS_DEV) $(JS_MIN) $(addsuffix .gz, $(PRECACHE_FILES))
-
-realclean: clean
-	rm -f i18n/*.js $(CSS)
-
-
-.PHONY: dev prod watch precache clean realclean
