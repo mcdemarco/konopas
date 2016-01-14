@@ -366,8 +366,10 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 
 </div><!-- /main -->
 
+<script src="data/arisia2016.js"></script>
+<script src="konopas.min.js"></script>
 <script>
-var konopas_set = {
+var konopas = new KonOpas({
     'id': 'arisia2016',
     'default_duration': 2880,
     'tag_categories': ['track', 'type'],
@@ -375,8 +377,9 @@ var konopas_set = {
     'show_all_days_by_default': false,
     'people_per_screen': 120,
     'use_server': false,
-    'filters': {
-        'area': {
+});
+konopas.set_program(program, {
+       'area': {
             'loc_level': 0,
             'labels': {
                 'all_areas': 'Everywhere',
@@ -402,11 +405,10 @@ var konopas_set = {
             },
             'promote': ['Featured'],
         }
-    }
-};
+});
+konopas.set_people(people);
+konopas.set_view();
 </script>
-<script src="data/arisia2016.js"></script>
-<script src="konopas.min.js"></script>
 
 </body>
 </html>
