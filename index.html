@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><!-- manifest="konopas.appcache" -->
+<html manifest="konopas.appcache">
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="skin/konopas.css">
@@ -8,33 +8,47 @@
 
 <!-- Android + favicon -->
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="shortcut icon" sizes="196x196" href="skin/favicon.196.png">
+<link rel="shortcut icon" sizes="196x196" href="data/arisia-planet.196.png">
 
 <!-- iOS -->
 <meta name="apple-mobile-web-app-capable" content="yes">
-<!--
-<link rel="apple-touch-icon"                 href="data/icon.apple.60.png">
-<link rel="apple-touch-icon" sizes="76x76"   href="data/icon.apple.76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="data/icon.apple.120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="data/icon.apple.152.png">
-<link rel="apple-touch-startup-image" href="data/start.apple.1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
-<link rel="apple-touch-startup-image" href="data/start.apple.2048x1496.png" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
-<link rel="apple-touch-startup-image" href="data/start.apple.768x1004.png"  media="(device-width: 768px) and (orientation: portrait)">
-<link rel="apple-touch-startup-image" href="data/start.apple.1024x748.png"  media="(device-width: 768px) and (orientation: landscape)">
-<link rel="apple-touch-startup-image" href="data/start.apple.640x920.png"   media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)">
-<link rel="apple-touch-startup-image" href="data/start.apple.320x460.png"   media="(device-width: 320px)">
--->
+<link rel="apple-touch-icon"                 href="data/arisia-planet.i60.png">
+<link rel="apple-touch-icon" sizes="76x76"   href="data/arisia-planet.i76.png">
+<link rel="apple-touch-icon" sizes="120x120" href="data/arisia-planet.i120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="data/arisia-planet.i152.png">
+<link rel="apple-touch-startup-image" href="data/arisia-splash.1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
+<link rel="apple-touch-startup-image" href="data/arisia-splash.2048x1496.png" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
+<link rel="apple-touch-startup-image" href="data/arisia-splash.768x1004.png"  media="(device-width: 768px) and (orientation: portrait)">
+<link rel="apple-touch-startup-image" href="data/arisia-splash.1024x748.png"  media="(device-width: 768px) and (orientation: landscape)">
+<link rel="apple-touch-startup-image" href="data/arisia-splash.640x920.png"   media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)">
+<link rel="apple-touch-startup-image" href="data/arisia-splash.320x460.png"   media="(device-width: 320px)">
 
 <!-- Windows Phone 8.1 -->
-<!--
-<meta name="msapplication-TileColor"         content="#ffffff">
-<meta name="msapplication-square70x70logo"   content="data/icon.ie.png">
-<meta name="msapplication-square150x150logo" content="data/icon.ie.png">
-<meta name="msapplication-square310x310logo" content="data/icon.ie.png">
--->
+<meta name="msapplication-TileColor"         content="#f4c432">
+<meta name="msapplication-square70x70logo"   content="data/arisia-planet.ie.png">
+<meta name="msapplication-square150x150logo" content="data/arisia-planet.ie.png">
+<meta name="msapplication-square310x310logo" content="data/arisia-planet.ie.png">
 
-<title>KonOpas Sample Guide</title>
+<!-- Info section styling; should be in the skin -->
+<style>
+#map { width: 100% !important; }
+#map td { text-align: center !important; padding: 6px 32px; }
+#map a, #map span { font-family: 'Oswald'; font-weight: 400; font-size: 1.2em; cursor: pointer; }
+#map a:hover, #map span:hover { text-decoration: underline; }
+#map tr:hover, .quick-ref tr:hover { background: inherit !important; }
+.quick-ref dt { margin: 6px 0 3px; }
+.quick-ref dt b { padding-right: 6px; }
+.quick-ref table { width: auto !important; border-spacing: 0; margin-bottom: 6px; }
+.quick-ref td { text-align: left !important; }
+#info_view .quick-ref td.c { text-align: center !important; }
+.quick-ref td:nth-child(2) { text-align: right !important; padding: 0 0 0 5px; }
+.quick-ref td:nth-child(3) { padding-left: 0; }
+.quick-ref ul { margin: 5px; }
+</style>
 
+<title>Arisia 2016</title>
+
+</head>
 <body><div id="top"></div>
 <div id="load_disable"></div>
 
@@ -44,9 +58,9 @@
 <div id="banner">
 <div id="server_connect"></div>
 
-<h1><a href="#info" alt="CONVENTION" title="CONVENTION">
-<img id="title-small" src="skin/konopas.png" style="width: 240px;">
-<img id="title" src="skin/konopas.png" style="width: 200px;"></a></h1>
+<h1><a href="#info" alt="Arisia 2016" title="Arisia 2016">
+<img id="title-small" src="data/arisia-title-small.png" style="width: 240px;">
+<img id="title" src="data/arisia-lens.png" style="width: 145px; margin: 27px;"></a></h1>
 
 <ul id="tabs">
 <li id="tab_star"><a href="#star" data-txt>My con</a>
@@ -87,7 +101,7 @@
 </div>
 
 <div id="info_view" class="view">
-<p>This is the program guide for <a href="http://example.org/">CONVENTION</a>. It should be suitable for use on most browsers and devices. It's an instance of <a href="http://konopas.org/">KonOpas</a>, an open-source project providing conventions with easy-to-use mobile-friendly guides.
+<p>This is the program guide for <a href="http://www.arisia.org/">Arisia</a> 2016. It should be suitable for use on most browsers and devices. It's an instance of <a href="http://konopas.org/">KonOpas</a>, an open-source project providing conventions with easy-to-use mobile-friendly guides.
 
 <p><div id="last-updated">Program and participant data were last updated <span></span>.</div>
 
@@ -105,55 +119,245 @@
 if (navigator.standalone) document.getElementById('install-instructions').style.display = 'none';
 </script>
 
-<!-- SAMPLE SECTIONS FOR "INFO" VIEW, UNCOMMENT TO SEE
-<style>
-#map { width: 100% !important; }
-#map td { text-align: center !important; padding: 6px 32px; }
-#map a, #map span { font-family: 'Oswald'; font-weight: 400; font-size: 1.2em; cursor: pointer; }
-#map a:hover, #map span:hover { text-decoration: underline; }
-#map tr:hover, .quick-ref tr:hover { background: inherit !important; }
-.quick-ref dt { margin: 6px 0 3px; }
-.quick-ref table { width: auto !important; border-spacing: 0; margin-bottom: 6px; }
-.quick-ref td { text-align: left !important; }
-#info_view .quick-ref td.c { text-align: center !important; }
-.quick-ref td:nth-child(2) { text-align: right !important; padding: 0 0 0 5px; }
-.quick-ref td:nth-child(3) { padding-left: 0; }
-</style>
-
-<h2>Sample Maps</h2>
+<h2>Maps</h2>
 <table id="map">
-<tr><td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-3W.png">Mezzanine Level&nbsp;(3W)</a>
-    <td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-3E.png">Conference Level&nbsp;(3E)</a>
-<tr><td colspan="2"><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-2.png">Lobby Level&nbsp;(2)</a>
-<tr><td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1W.png">Concourse Level&nbsp;(1W)</a>
-    <td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1E.png">Galleria Level&nbsp;(1E)</a>
+	<tr>
+		<td><a class="popup-link" href="data/arisia-westin-3W.png">Mezzanine Level&nbsp;(3W)</a></td>
+		<td><a class="popup-link" href="data/arisia-westin-3E.png">Conference Level&nbsp;(3E)</a></td>
+	</tr>
+	<tr>
+		<td colspan="2"><a class="popup-link" href="data/arisia-westin-2.png">Lobby Level&nbsp;(2)</a></td>
+	</tr>	
+	<tr>
+		<td><a class="popup-link" href="data/arisia-westin-1W.png">Concourse Level&nbsp;(1W)</a></td>
+		<td><a class="popup-link" href="data/arisia-westin-1E.png">Galleria Level&nbsp;(1E)</a></td>
+	</tr>
 </table>
 
-<h2>Sample Links</h2>
-<ul>
-<li><a href="http://example.com/">Newsletter</a>
-<li><a href="http://example.com/">Restaurant Guide</a> (PDF, 6MB)
-<li><a href="http://example.com/">Progress Report 5</a> (web page)
-<li><a href="http://example.com/">Code of Conduct</a> (PDF)
-</ul>
 
-<h2>Sample Quick Reference</h2>
+<h2>Quick Reference</h2>
 <dl class="quick-ref">
-<dt><b>Access/Handicapped Services</b>: see Info Desk near elevators
+	<dt><b>Access/Handicapped Services</b> see Info Desk</dt>
+	<dt><b>Anime Room</b>  Griffin (3E)</dt>
+	<dt><b>Arisia TV</b>  Channel 86 in Guest Rooms</dt>
 
-<dt><b>Art Show</b>: Harbor Ballroom II/III (3E)
-<dd><table>
-<tr><td>Friday<td>6pm–<td>9pm
-<tr><td>Saturday<td>10am–<td>6pm, 8pm–10pm
-<tr><td>Sunday<td>10am–<td>1:30pm
-</table>
-<b>Sales Pickup / Artist Checkout</b>: Sunday 3:30pm–7:30pm<br>
-<b>Voice Auction</b>: Sunday 4:30pm<br>
-<b>Sales Pickup / Artist Checkout</b>: Monday 10am–1pm
+	<dt><b><a href="http://arisia.org/ArtShow">Art Show</a></b>  Harbor Ballroom II/III (3E)</dt>
+		<dd>Friday &nbsp;&nbsp; 6pm–9pm</dd>
+		<dd>Saturday &nbsp;&nbsp; 10am–6pm, 8pm–10pm</dd>
+		<dd>Sunday &nbsp;&nbsp; 10am–6pm &nbsp;&nbsp; Paper auction ends at 4pm</dd>
+		<dd>Sunday &nbsp;&nbsp; 5pm–7pm &nbsp;&nbsp; Sales Pickup</dd>
+		<dd>Monday &nbsp;&nbsp; 10am–noon &nbsp;&nbsp; Sales Pickup/Artist Checkout</dd>
 
-<dt><b>...</b>
+	<dt><b><a href="http://arisia.org/Alley">Artists &amp; Authors Alley</a></b> Galleria Prefunction (1E)</dt>
+		<dd>Friday &nbsp;&nbsp; 5pm–9pm</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 10am–6:30pm</dd>
+		<dd>Monday &nbsp;&nbsp; 10am–3pm</dd>
+
+	<dt><b><a href="http://arisia.org/blooddrive">Blood Drive</a></b> Lobby near elevators</dt>
+		<dd>Friday &nbsp;&nbsp; 1:30pm–7:30pm &nbsp;&nbsp; for Children’s Hospital</dd>
+		<dd>Saturday &nbsp;&nbsp; 9am–2pm &nbsp;&nbsp; for Mass General Hospital</dd>
+		<dd>Sunday &nbsp;&nbsp; 2:45pm-6pm &nbsp;&nbsp; for Mass General Hospital</dd>
+		<dd>Request an appointment at <a href="mailto:blooddrive@arisia.org">blooddrive@arisia.org</a>, or walk up during the drive for our next available appointment.</dd>
+
+	<dt><b>Bone Marrow Drive</b>  Lobby near elevators</dt>
+		<dd>Friday &nbsp;&nbsp; 3pm–7:30 pm</dd>
+		<dd>Saturday &nbsp;&nbsp; 10am–5pm</dd>
+
+	<dt><b>Bouncy Castle</b>  Grand Ballroom A</dt>
+		<dd>Friday &nbsp;&nbsp; 5pm–6:30pm</dd>
+		<dd>Saturday &nbsp;&nbsp; 8am-10am</dd>
+		<dd>Sunday &nbsp;&nbsp; 4pm–5:30pm</dd>
+		<dd>Monday &nbsp;&nbsp; 8am-2pm</dd>
+
+	<dt><b>Childcare/Turtle Track (2–6yr)</b>  see Ops for room</dt>
+		<dd>Friday &nbsp;&nbsp; 5pm–6pm, 7pm–10pm</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 10am–noon, 1pm–6pm, 7pm–10pm</dd>
+		<dd>Monday &nbsp;&nbsp; 10am–noon, 1pm–3pm</dd>
+
+	<dt><b>Coat Check</b>  Concourse Level (1W), Marina Prefunction (2E)</dt>
+		<dd>Friday &nbsp;&nbsp; 3pm–1am</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 8am–1am</dd>
+		<dd>Monday &nbsp;&nbsp; 10am–2pm</dd>
+
+	<dt><b>Con Suite</b>   Galleria (1E)</dt>
+	<dt><b>Cosplay Repair Station</b>  Concourse Level (1W)</dt>
+		<dd>Friday &nbsp;&nbsp; 4pm–10pm</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 10am–10pm</dd>
+
+	<dt><b><a href="http://arisia.org/DealersRoomList">Dealers Room</a></b> Galleria (1E)</dt>
+		<dd>Friday &nbsp;&nbsp; 5pm–9pm</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 10am–6:30pm</dd>
+		<dd>Monday &nbsp;&nbsp; 10am–2:30pm</dd>
+
+	<dt><b>Duck Hunt</b>  turn in at Team Arisia HQ: Quincy (2W)</dt>
+	<dt><b>Fan Tables</b>  Mezzanine near escalator (3W)</dt>
+		<dd>Friday &nbsp;&nbsp; 4pm–6pm</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 10am–6pm</dd>
+		<dd>Monday &nbsp;&nbsp; 10am–2pm</dd>
+
+	<dt><b>Fast Track (Children’s Program: ages 6–12)</b> Hancock/Webster (2W)</dt>
+		<dd>Friday &nbsp;&nbsp; 4pm–6pm</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 10am–11:30am, 1pm–5:30pm</dd>
+		<dd>Monday &nbsp;&nbsp; 10am–1pm</dd>
+		<dd>Only adults accompanied by children allowed.</dd>
+
+	<dt><b>Feedback</b></dt>
+		<dd>Fill out a form at Info Desk or Ops. There will be Feedback Sessions Saturday and Monday. See <a href="http://arisia.org/feedback">http://www.arisia.org/feedback</a>.</dd>
+
+	<dt><b>Filk (all night open filk)</b> Paine (2W)</dt>
+	<dt><b>Film Room</b>  Otis (2W)</dt>
+	<dt><b>First Aid</b>  Stone (2W) </dt>
+		<dd>Fri–Sun &nbsp;&nbsp; 8am–midnight</dd>
+		<dd>Monday &nbsp;&nbsp; 8am–7pm</dd>
+		<dd>In case of medical emergency call 911.</dd>
+
+	<dt><b>Food Options</b></dt>
+		<dd>Food trucks on Concourse level, past Grand Ballroom
+			<ul>
+				<li>Sat/Sun &nbsp;&nbsp; 11am–4:30pm</li>
+				<li>Monday &nbsp;&nbsp; 11am–3pm</li>
+			</ul>
+		</dd>
+		<dd>Hotel restaurants on Lobby level.</dd>
+		<dd>Lobby level concessions
+			<ul>
+				<li>Fri/Sat/Sun &nbsp;&nbsp; 4pm–8pm</li>
+			</ul>
+		</dd>
+		<dd>Starbucks (Lobby level):  24 hours (extended menu options)</dd>
+		<dd>Restaurant Guide (incl. delivery options) at Info Desk (<a href="http://2013.arisia.org/sites/all/files/2013/RestaurantGuide.pdf">PDF</a>, <a href="https://www.google.com/maps/d/viewer?mid=zBN-v5XM05R0.knYss1y51nHE&msa=0&ll=42.345921%2C-71.05442&spn=0.029657%2C0.04416">Google map</a>).</dd>
+		<dd>See also <a href="http://arisia.org/food">http://www.arisia.org/food</a>.</dd>
+
+	<dt><b>Freebie &amp; Promotional Tables</b>  Concourse Level (1W)</dt>
+	<dt><b>Gaming</b></dt>
+		<dd>Tabletop &nbsp;&nbsp; 24hr &nbsp;&nbsp; Harbor Ballroom I (3E)</dd>
+		<dd>LARPs &nbsp;&nbsp; Signup in Harbor I (3E)</dd>
+		<dd>Video Games &nbsp;&nbsp; Carlton (3E)
+		    <ul>
+				<li>Friday &nbsp;&nbsp;  5pm–2am</li>
+				<li>Saturday &nbsp;&nbsp; 10am–2am</li>
+				<li>Sunday &nbsp;&nbsp; 10am–1am</li>
+				<li>Monday &nbsp;&nbsp; 10am–4pm</li>
+			</ul>
+        </dd>
+		<dd>Arcade Games &nbsp;&nbsp; 10am-2am  &nbsp;&nbsp;  Lobby Level (1E)</dd>
+
+	<dt><b>Gender Pronoun Identification Ribbons</b> Concourse Level (1W)</dt>
+
+	<dt><b>Goat Check</b> <i>see Coat Check</i></dt>
+
+	<dt><b>Hall Costumes</b>  go to Masquerade Check-In</dt>
+	<dt><b>Hotels </b></dt>
+		<dd>Westin main number: 617-532-4600</dd>
+		<dd>Renaissance main number: 617-338-4111</dd>
+
+	<dt><b>Information Desk</b>  Lobby near elevators</dt>
+		<dd>Friday &nbsp;&nbsp; noon–11pm </dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 9am–9pm </dd>
+		<dd>Monday &nbsp;&nbsp; 9am–1pm </dd>
+
+	<dt><b>Internet Access</b>  Wireless Only</dt>
+		<dd>In Public areas—use ‘WestinBostonLobby’ (no password)</dd>
+		<dd>In Guest Rooms—Password: arisia2016</dd>
+
+	<dt><b>Lost and Found</b>  Hotel Front Desk</dt>
+		<dd>Go to Registration for lost badges.</dd>
+
+	<dt><b><a href="http://arisia.org/Masquerade">Masquerade</a></b> Grand Ballroom AB (1W)</dt>
+		<dd>Sunday &nbsp;&nbsp; 8pm (doors open at 7pm)</dd>
+		<dd>Check-In &nbsp;&nbsp; Concourse Level (1W)
+			<ul>
+				<li>Friday &nbsp;&nbsp;  4pm–9pm</li>
+				<li>Saturday &nbsp;&nbsp; 10am–5pm</li>
+				<li>Sunday &nbsp;&nbsp; 10am–noon</li>
+			</ul>
+		</dd>
+		<dd>Tech Rehearsals (Required) &nbsp;&nbsp; Grand Ballroom B (1W)
+			<ul>
+				<li>Saturday &nbsp;&nbsp; 9am–2pm</li>
+				<li>Sunday &nbsp;&nbsp; 2:45pm–6pm</li>
+			</ul>
+		</dd>
+		<dd>Green Room (adults) &nbsp;&nbsp; Grand Ballroom DE (1W)
+			<ul>
+				<li>Sunday &nbsp;&nbsp; 6:30pm–½ hour after awards</li>
+			</ul>
+		</dd>
+		<dd>Green Room (Kamikaze Kids) &nbsp;&nbsp; Grand Ballroom C (1W)
+			<ul>
+				<li>Sunday &nbsp;&nbsp; 7pm–9pm</li>
+			</ul>
+		</dd>
+		<dd>Ribbon &amp; CD pickup &nbsp;&nbsp; Masq Show and Tell
+			<ul>
+				<li>Monday &nbsp;&nbsp; 11:30am</li>
+			</ul>
+		</dd>
+	
+	<dt><b>Newsletter</b> &nbsp;&nbsp;    Frost (3W)</dt>
+		<dd>Mail to <a href="mailto:newsletter@arisia.org">newsletter@arisia.org</a> or submit at Info Desk or Ops.</dd>
+
+	<dt><b>Operations (Con Ops)</b>  Stone (2W)</dt>
+		<dd>Fri–Sun &nbsp;&nbsp; 8am–midnight</dd>
+		<dd>Monday &nbsp;&nbsp; 8am–7pm</dd>
+		<dd>Hotel phone 617-502-2249 (x2249), cell/text 617-652-1785</dd>
+
+	<dt><b><a href="http://arisia.org/Parking">Parking</a></b></dt>
+		<dd>Hotel Garage: Self-parking $36/day, valet parking $46/day</dd>
+		<dd>Off Site: See <a href="http://www.arisia.org/parking">http://www.arisia.org/parking</a></dd>
+
+	<dt><b>Party Room Block (Open Parties)</b>  4th floor</dt>
+	<dt><b>Photo Booth</b>  Concourse Level (1W)</dt>
+		<dd>Fri–Mon &nbsp;&nbsp; 11am–6pm &nbsp;&nbsp; Props, lighting, and assistance</dd>
+		<dd>Backdrop will be available all weekend.</dd>
+
+	<dt><b>Press Liaison</b>  Check-In with Ops: Stone (2W)</dt>
+	<dt><b>Program Nexus</b>  Executive Boardroom(3W)</dt>
+		<dd>Friday &nbsp;&nbsp; 3pm–10pm</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 9am–8pm</dd>
+		<dd>Monday &nbsp;&nbsp;  9:30am–2pm</dd>
+		<dd>Hotel phone 617-502-4993 (x4993)</dd>
+
+	<dt><b>Quiet Room</b>  401</dt>
+		<dd>Friday &nbsp;&nbsp; 4pm–8pm</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 10am–8pm</dd>
+		<dd>Monday &nbsp;&nbsp; 10am–2pm</dd>
+
+	<dt><b><a href="http://arisia.org/Registration">Registration</a></b> Concourse Level (1W)</dt>
+		<dd>Friday &nbsp;&nbsp; 3pm–11pm ($20)</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 9am–8pm ($45/30)</dd>
+		<dd>Monday &nbsp;&nbsp; 9:30am–2pm ($10)</dd>
+		<dd>Lost badges $5 (once only, after that full price)</dd>
+		<dd>Arisia 2017 memberships available starting Sunday noon.</dd>
+
+	<dt><b>Security</b>  <i>see The Watch</i></dt>
+
+	<dt><b>Swimming Pool</b>  Mezzanine Level (3W)</dt>
+		<dd>Fri–Mon &nbsp;&nbsp; 8am–3am (special convention hours)</dd>
+
+	<dt><b><a href="http://arisia.org/Volunteer">Team Arisia Headquarters</a></b>  Quincy (2W) </dt>
+		<dd>Friday &nbsp;&nbsp; noon–10pm</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 9am–10pm</dd>
+		<dd>Monday &nbsp;&nbsp; 9am–4pm</dd>
+		<dd>Hotel phone 617-502-4525 (x4525)</dd>
+
+	<dt><b>Teen Lounge (Ages 13–19 only)</b>  466/467</dt>
+		<dd>Friday &nbsp;&nbsp; 4pm–10pm</dd>
+		<dd>Sat/Sun &nbsp;&nbsp; 10am–10pm</dd>
+		<dd>Monday &nbsp;&nbsp; 10am–noon</dd>
+
+	<dt><b>Tiptree Bakesale</b>  Galleria Foyer (1E)</dt>
+		<dd>Saturday &nbsp;&nbsp; 10am until sold out</dd>
+
+	<dt><b>Video Room</b>  Revere (2W)</dt>
+
+	<dt><b>Volunteers</b>  <i>see Team Arisia Headquarters</i></dt>
+
+	<dt><b>The Watch (Security)</b>  Stone (2W)</dt>
+		<dd>24-hours</dd>
+		<dd>Hotel phone 617-502-2211 (x2211), cell/text 617-858-9364 </dd>
+
 </dl>
--->
 
 </div>
 
@@ -162,22 +366,47 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 
 </div><!-- /main -->
 
-<script src="http://konopas.org/demo/data/program.js"></script>
-<script src="http://konopas.org/demo/data/people.js"></script>
-<script src="konopas.js"></script>
 <script>
-var konopas = new KonOpas({
-	'id': '',
-	'default_duration': 0,
-	'time_show_am_pm': true,
-	'show_all_days_by_default': true,
-	'use_server': false
-});
-konopas.set_program(program, {
-	'day': {},
-	'area': {},
-	'tag': {}
-});
-konopas.set_people(people);
-konopas.set_view();
+var konopas_set = {
+    'id': 'arisia2016',
+    'default_duration': 2880,
+    'tag_categories': ['track', 'type'],
+    'time_show_am_pm': true,
+    'show_all_days_by_default': false,
+    'people_per_screen': 120,
+    'use_server': false,
+    'filters': {
+        'area': {
+            'loc_level': 0,
+            'labels': {
+                'all_areas': 'Everywhere',
+                'area': 'Other location',
+                '1W': 'Concourse (1W)',
+                '2E': 'Marina (2E)',
+                '2W': 'Lobby (2W)',
+                '3E': 'Conference (3E)',
+                '3W': 'Mezzanine (3W)',
+                'ArisiaTV': '$ArisiaTV',
+                'Commonwealth Ballroom ABC': 'Commonwealth Ballroom',
+            },
+            'promote': ['3W', '3E', '2W', '2E', '1W'],
+            'exclude': ['^Galleria -', '^Gaming Table', '^Grand Prefunction$']
+        },
+        'tag': {
+            'categories': ['track', 'type'],
+            'labels': {
+                'all_tags': 'All tracks & types',
+                'Featured': 'Featured items',
+                'track': 'Track',
+                'type': 'Type'
+            },
+            'promote': ['Featured'],
+        }
+    }
+};
 </script>
+<script src="data/arisia2016.js"></script>
+<script src="konopas.min.js"></script>
+
+</body>
+</html>

@@ -329,7 +329,8 @@ KonOpas.Server.prototype.exec = function(cmd) {
 		url = this.url(cmd);
 	script.src = url;
 	script.async = true;
-	script.onerror = function(ev) { this.error('', (ev || window.event).target.src); }.bind(this);
+	//Too chatty.
+	//script.onerror = function(ev) { this.error('', (ev || window.event).target.src); }.bind(this);
 
 	script.onload = script.onreadystatechange = function() {
 		if (!done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {

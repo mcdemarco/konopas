@@ -47,11 +47,7 @@ if ((function(){
 }
 
 
-String.prototype.make_ascii = String.prototype.normalize
-	? function() {
-		return this.normalize('NFKD').replace(/[^\x00-\x7F]/g, '');
-	}
-	: function() {
+String.prototype.make_ascii = function() {
 		var str = this.toString();
 		if (/^[\x00-\x7F]*$/.test(str)) return str;
 		// map from http://web.archive.org/web/20120918093154/http://lehelk.com/2011/05/06/script-to-remove-diacritics/
