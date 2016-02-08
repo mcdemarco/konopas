@@ -1,9 +1,10 @@
 BIN = ./node_modules/.bin
 
 DEV = dist/dev.html dist/konopas.js dist/skin/konopas.css
-PROD = dist/index.html dist/konopas.min.js dist/skin/konopas.min.css
+PROD = dist/index.html dist/konopas.min.js dist/skin/konopas.min.css dist/konopas.appcache 
 SKIN = $(addprefix dist/, $(wildcard skin/*.png skin/*.ttf))
-STATIC = $(SKIN) dist/favicon.ico
+DATA = $(addprefix dist/, $(wildcard data/*.png data/*.jpg data/*.ico data/*.js))
+STATIC = $(SKIN) $(DATA) dist/favicon.ico
 
 MAKEFLAGS += -r
 .SUFFIXES:
@@ -15,7 +16,7 @@ dev: LC $(DEV) $(STATIC)
 clean: ; rm -rf tmp/ dist/
 
 
-tmp dist dist/skin: ; mkdir -p $@
+tmp dist dist/skin dist/data: ; mkdir -p $@
 
 tmp/LC: | tmp ; echo 'en' > $@
 LC: | tmp/LC
@@ -54,6 +55,9 @@ dist/index.html: index.html | dist
 dist/favicon.ico: skin/favicon.ico | dist
 	cp $< $@
 
+dist/konopas.appcache: konopas.appcache | dist
+	cp $< $@
+
 dist/skin/konopas.css: skin/*.less | dist/skin
 	$(BIN)/lessc skin/main.less $@
 
@@ -61,6 +65,9 @@ dist/skin/konopas.min.css: skin/*.less | dist/skin
 	$(BIN)/lessc skin/main.less --clean-css="--s0 --advanced --compatibility=ie8" $@
 
 dist/skin/%: skin/% | dist/skin
+	cp $< $@
+
+dist/data/%: data/% | dist/data
 	cp $< $@
 
 
