@@ -293,8 +293,9 @@ var konopas = new KonOpas({
 	'default_duration': 0,
 	'time_show_am_pm': true,
 	'show_all_days_by_default': true,
-	'use_server': false,
-	'filters': {
+	'use_server': false
+});
+konopas.set_program(program, {
 		'day': {},
 		'area': {},
 		'tag': {
@@ -305,6 +306,7 @@ var konopas = new KonOpas({
 			},
 			'promote': ['Free'],
 		}
-	}
 });
+konopas.set_people(people);
+konopas.set_view();
 </script>
