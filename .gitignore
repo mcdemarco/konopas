@@ -1,4 +1,6 @@
-.*
-dist/
-node_modules/
-tmp/
+i18n/*.js
+node_modules
+tmp
+*.log
+data/program*
+data/people*

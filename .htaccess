@@ -1,0 +1,3 @@
+AddType text/cache-manifest .appcache
+Options -Indexes
+RedirectMatch 404 /\.git

@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html><!-- manifest="konopas.appcache" -->
+<html manifest="konopas.appcache">
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="skin/konopas.css">
 <meta name="HandheldFriendly" content="true">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
-<!-- Android + favicon -->
+<!-- Favicon -->
+<link rel="shortcut icon" href="favicon.ico">
+
+<!-- Android -->
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="shortcut icon" sizes="196x196" href="skin/favicon.196.png">
+<link rel="icon" sizes="192x192" href="data/non-apple-touch-icon.png">
 
 <!-- iOS -->
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Boskone 53">
+<link rel="apple-touch-icon" sizes="180x180" href="data/apple-touch-icon.png">
 <!--
 <link rel="apple-touch-icon"                 href="data/icon.apple.60.png">
-<link rel="apple-touch-icon" sizes="76x76"   href="data/icon.apple.76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="data/icon.apple.120.png">
 <link rel="apple-touch-icon" sizes="152x152" href="data/icon.apple.152.png">
 <link rel="apple-touch-startup-image" href="data/start.apple.1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
 <link rel="apple-touch-startup-image" href="data/start.apple.2048x1496.png" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
@@ -33,7 +36,52 @@
 <meta name="msapplication-square310x310logo" content="data/icon.ie.png">
 -->
 
-<title>KonOpas Sample Guide</title>
+<style>
+/* fix for area/tag popup list running offscreen on small screens */
+.popup {
+	max-height:84%;
+}
+/* handle our crazy long area names in a hacky way */
+ul#area0 li {
+	width:300px;
+}
+ul#area div.popup-link.selected {
+	max-width:150px;
+	white-space:nowrap;
+	overflow-x:hidden;
+	text-overflow:ellipsis;
+}
+/* just some local style */
+#foodSubUL {
+	list-style-type: none;
+}
+span.free {
+	font-style: italic;
+	color: red;
+	padding-left: 3px;
+}
+
+/* maps and other info */
+#map { width: 100% !important; }
+#map td { text-align: center !important; padding: 6px 32px; }
+#map a, #map span { font-family: 'Oswald'; font-weight: 400; font-size: 1.2em; cursor: pointer; }
+#map a:hover, #map span:hover { text-decoration: underline; }
+#map tr:hover, .quick-ref tr:hover { background: inherit !important; }
+#map a:after {content: " Map";}
+#map ul {list-style-type: none; margin:0; padding:0;display:inline;}
+#map ul li:after {content: ", ";}
+#map ul li:last-child:after {content: ". ";}
+#map li {display:inline;}
+
+.quick-ref dt { margin: 6px 0 3px; }
+.quick-ref table { width: auto !important; border-spacing: 0; margin-bottom: 6px; }
+.quick-ref td { text-align: left !important; }
+#info_view .quick-ref td.c { text-align: center !important; }
+.quick-ref td:nth-child(2) { text-align: right !important; padding: 0 0 0 5px; }
+.quick-ref td:nth-child(3) { padding-left: 0; }
+</style>
+
+<title>Boskone 53 Guide</title>
 
 <body><div id="top"></div>
 <div id="load_disable"></div>
@@ -44,9 +92,9 @@
 <div id="banner">
 <div id="server_connect"></div>
 
-<h1><a href="#info" alt="CONVENTION" title="CONVENTION">
-<img id="title-small" src="skin/konopas.png" style="width: 240px;">
-<img id="title" src="skin/konopas.png" style="width: 200px;"></a></h1>
+<h1><a href="#info" alt="Boskone 53" title="Boskone 53">
+<img src="data/boskonelogo-small.jpg" width="228" height="67" id="title-small" style="width: 228px;">
+<img src="data/boskonelogo-small.jpg" name="title" width="200" id="title" style="width: 200px;"></a></h1>
 
 <ul id="tabs">
 <li id="tab_star"><a href="#star" data-txt>My con</a>
@@ -87,7 +135,7 @@
 </div>
 
 <div id="info_view" class="view">
-<p>This is the program guide for <a href="http://example.org/">CONVENTION</a>. It should be suitable for use on most browsers and devices. It's an instance of <a href="http://konopas.org/">KonOpas</a>, an open-source project providing conventions with easy-to-use mobile-friendly guides.
+<p>This is the program guide for <a href="http://www.boskone.org/">Boskone 52</a>. It should be suitable for use on most browsers and devices. It's an instance of <a href="http://konopas.org/">KonOpas</a>, an open-source project providing conventions with easy-to-use mobile-friendly guides.
 
 <p><div id="last-updated">Program and participant data were last updated <span></span>.</div>
 
@@ -105,55 +153,129 @@
 if (navigator.standalone) document.getElementById('install-instructions').style.display = 'none';
 </script>
 
-<!-- SAMPLE SECTIONS FOR "INFO" VIEW, UNCOMMENT TO SEE
-<style>
-#map { width: 100% !important; }
-#map td { text-align: center !important; padding: 6px 32px; }
-#map a, #map span { font-family: 'Oswald'; font-weight: 400; font-size: 1.2em; cursor: pointer; }
-#map a:hover, #map span:hover { text-decoration: underline; }
-#map tr:hover, .quick-ref tr:hover { background: inherit !important; }
-.quick-ref dt { margin: 6px 0 3px; }
-.quick-ref table { width: auto !important; border-spacing: 0; margin-bottom: 6px; }
-.quick-ref td { text-align: left !important; }
-#info_view .quick-ref td.c { text-align: center !important; }
-.quick-ref td:nth-child(2) { text-align: right !important; padding: 0 0 0 5px; }
-.quick-ref td:nth-child(3) { padding-left: 0; }
-</style>
 
-<h2>Sample Maps</h2>
+<h2>Maps</h2>
+
+<p>All Boskone activity is on the <b>Harbor Wing</b> side of the hotel, on your left as you walk in the main door of the Westin.</p>
+
 <table id="map">
-<tr><td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-3W.png">Mezzanine Level&nbsp;(3W)</a>
-    <td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-3E.png">Conference Level&nbsp;(3E)</a>
-<tr><td colspan="2"><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-2.png">Lobby Level&nbsp;(2)</a>
-<tr><td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1W.png">Concourse Level&nbsp;(1W)</a>
-    <td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1E.png">Galleria Level&nbsp;(1E)</a>
+	<tr><td><a class="popup-link" href="data/HarborWing2ndFloor-2015.png">Upper Level (Mezzanine)</a></td></tr>
+	<tr><td>
+		<ul>
+			<li>Registration</li>
+			<li>Anime &amp; Film</li>
+			<li>Program</li>
+		</ul>
+	</td></tr>
+	<tr><td><a class="popup-link" href="data/LobbyMarinaBallroom-2015.png">Lobby Level (Marina Ballroom)</a></td></tr>
+	<tr><td>
+		<ul>
+			<li>Program</li>
+			<li>Gaming</li>
+			<li>Filking</li>
+			<li>Coat Check</li>
+		</ul>
+	</td></tr>
+	<tr><td><a class="popup-link" href="data/Galleria-2015.png">Lower Level (Galleria)</a></td></tr>
+	<tr><td>
+		<ul>
+			<li>Art Show</li>
+			<li>Autographing</li>
+			<li>Con Suite</li>
+			<li>Dealers Room</li>
+			<li>Discussion Groups</li>
+			<li>DragonsLair</li>
+			<li>Fan Tables</li>
+			<li>Information</li>
+			<li>Kaffeklatches</li>
+			<li>Office</li>
+			<li>Program Ops</li>
+			<li>Volunteers</li>
+		</ul>
+	</td></tr>
 </table>
 
-<h2>Sample Links</h2>
+
+<h2>Quick Links</h2>
 <ul>
-<li><a href="http://example.com/">Newsletter</a>
-<li><a href="http://example.com/">Restaurant Guide</a> (PDF, 6MB)
-<li><a href="http://example.com/">Progress Report 5</a> (web page)
-<li><a href="http://example.com/">Code of Conduct</a> (PDF)
+	<li><a href="http://www.nesfa.org/boskone/artshow.html">Artists</a></li>
+	<li><a href="http://www.nesfa.org/boskone/dealers.html">Dealers</a></li>
+	<li>Food: 
+		<ul id="foodSubUL">
+			<li><a href="http://www.nesfa.org/boskone/food.html">Hotel Food & Delivery Options</a></li>
+			<li><a href="http://www.arisia.org/sites/default/files/A15_RestGuide_FinalSpreads01.pdf">Restaurant Guide</a> (PDF, 6MB)</li>
+		</ul>
+	<li><a href="http://www.nesfa.org/boskone/helmuth.html">Helmuth</a>, the newsletter of Boskone</li>
+	<li><a href="http://www.nesfa.org/boskone/progress-reports.html">Progress Reports</a></li>
+	<li><a href="http://www.nesfa.org/boskone/codeofconduct.html">Code of Conduct</a></li>
 </ul>
 
-<h2>Sample Quick Reference</h2>
+<h2>Quick Reference</h2>
 <dl class="quick-ref">
-<dt><b>Access/Handicapped Services</b>: see Info Desk near elevators
-
-<dt><b>Art Show</b>: Harbor Ballroom II/III (3E)
-<dd><table>
-<tr><td>Friday<td>6pm–<td>9pm
-<tr><td>Saturday<td>10am–<td>6pm, 8pm–10pm
-<tr><td>Sunday<td>10am–<td>1:30pm
-</table>
-<b>Sales Pickup / Artist Checkout</b>: Sunday 3:30pm–7:30pm<br>
-<b>Voice Auction</b>: Sunday 4:30pm<br>
-<b>Sales Pickup / Artist Checkout</b>: Monday 10am–1pm
-
-<dt><b>...</b>
+	<dt><b>Anime</b>&nbsp;(See Films)</dt>
+	<dt><b>Art Show</b> Galleria</dt>
+	<dd>Fri 6:00p - 11:00p</dd>
+	<dd>Sat 10:00a - 9:00p</dd>
+	<dd>Sun 10:00a - Noon</dd>
+	<dd>Sun Noon Closeout</dd>
+	<dd>Sun 1:00p - 3:00p Sales</dd>
+	<dt><b>Children</b> (see DragonsLair)</dt>
+	<dt><b>Coat Check</b> (opposite Marina III)</dt>
+	<dd>TBA</dd>
+	<dt><b>Con Suite</b> Galleria</dt>
+	<dd>Fri 4:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Fri 6:00p - 1:00a</dd>
+	<dd>Sat 10:00a - 1:00a</dd>
+	<dd>Sun 10:00a - 4:00p</dd>
+	<dt><b>Dead Dog Party</b> Galleria</dt>
+	<dd>Sun after teardown</dd>
+	<dt><b>Dealers Room</b> Galleria</dt>
+	<dd>Fri 5:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Fri 6:00p - 8:00p</dd>
+	<dd>Sat 10:00a - 6:00p</dd>
+	<dd>Sun 10:00a - 3:00p</dd>
+	<dt><b>DragonsLair</b> Galleria</dt>
+	<dd>Fri 6:00p - 9:00p</dd>
+	<dd>Sat 9:00 - Noon</dd>
+	<dd>Sat 1:00p - 5:00p</dd>
+	<dd>Sat 7:00p - 9:00p</dd>
+	<dd>Sun 9:00a - 2:00p</dd>
+	<dt><b>Fan Tables</b> Galleria Foyer</dt>
+	<dd>Fri 3:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Sat 11:00a - 6:00p</dd>
+	<dd>Sun 11:00a - 3:00p</dd>
+	<dt><b>Filking</b> Marina 3</dt>
+	<dd>Fri 4:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Fri 6:00p - ? (after Midnight)</dd>
+	<dd>Sat 10:00a - ? (after Midnight)</dd>
+	<dd>Sun 10:00a - 4:00p</dd>
+	<dt><b>Films</b> Carlton</dt>
+	<dd>Fri 2:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Fri 6:00p - 1:30a</dd>
+	<dd>Sat 9:00a - 1:30a</dd>
+	<dd>Sun 9:00a - 3:00p</dd>
+	<dt><b>Gaming</b> Marina 1</dt>
+	<dd>Fri 5:00p - 6:00p <span class="free">Free</span></dd>
+	<dd>Fri 6:00p - Midnight</dd>
+	<dd>Sat 10:00a - Midnight</dd>
+	<dd>Sun 10:00a - 3:00p</dd>
+	<dt><b>Hotels</b></dt>
+	<dd>Westin main: 617-532-4600</dd>
+	<dd>Renaissance main: 617-338-4111</dd>
+	<dt><b>Information</b> Galleria</dt>
+	<dd>Fri 3:00p - 9:00p</dd>
+	<dd>Sat 10:00a - 9:00p</dd>
+	<dd>Sun 10:00a - 3:00p</dd>
+	<dt><b>Kids</b> (see DragonsLair)</dt>
+	<dt><b>Quick Sale</b> Galleria</dt>
+	<dd>Sat Noon - 9:00p</dd>
+	<dd>Sun 10:00a - Noon</dd>
+	<dt><b>Registration</b> 2nd floor, Harbor Foyer</dt>
+	<dd>Fri 3:00p - 8:30p</dd>
+	<dd>Sat 9:00a - 6:00p</dd>
+	<dd>Sun 9:00a - Noon</dd>
+	<dt><b>Volunteers</b> (see Information)</dt>
 </dl>
--->
 
 </div>
 
@@ -162,22 +284,27 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 
 </div><!-- /main -->
 
-<script src="http://konopas.org/demo/data/program.js"></script>
-<script src="http://konopas.org/demo/data/people.js"></script>
-<script src="konopas.js"></script>
+<script src="data/program.js"></script>
+<script src="data/people.js"></script>
+<script src="konopas.min.js"></script>
 <script>
 var konopas = new KonOpas({
-	'id': '',
+	'id': 'boskone53',
 	'default_duration': 0,
 	'time_show_am_pm': true,
 	'show_all_days_by_default': true,
-	'use_server': false
+	'use_server': false,
+	'filters': {
+		'day': {},
+		'area': {},
+		'tag': {
+			'min_count': 5,
+			'labels': {
+				'all_tags': 'All tags',
+				'tag': 'Select tag'
+			},
+			'promote': ['Free'],
+		}
+	}
 });
-konopas.set_program(program, {
-	'day': {},
-	'area': {},
-	'tag': {}
-});
-konopas.set_people(people);
-konopas.set_view();
 </script>
