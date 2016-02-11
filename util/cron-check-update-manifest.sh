@@ -7,8 +7,8 @@ tgtp="data/people.js"
 tm="$tgt.$ts"
 tmp="$tgtp.$ts"
 
-grenadine_prog_url="https://boskone53.grenadine.co/konopas/program.js"
-grenadine_peep_url="https://boskone53.grenadine.co/konopas/program/participants.js"
+grenadine_prog_url="https://boskone.grenadine.co/Boskone_53/konopas/program.js"
+grenadine_peep_url="https://boskone.grenadine.co/Boskone_53/konopas/program/participants.js"
 
 cd /home/nesfa/nesfa.org/boskone/konopas/
 
