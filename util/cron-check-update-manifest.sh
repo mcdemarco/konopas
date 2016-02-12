@@ -10,7 +10,7 @@ tmp="$tgtp.$ts"
 grenadine_prog_url="https://boskone.grenadine.co/Boskone_53/konopas/program.js"
 grenadine_peep_url="https://boskone.grenadine.co/Boskone_53/konopas/program/participants.js"
 
-cd /home/nesfa/nesfa.org/boskone/konopas/
+cd /home/nesfa/konopas/
 
 curl "$grenadine_prog_url" > "$tm" 2>/dev/null
 curl "$grenadine_peep_url" > "$tmp" 2>/dev/null
