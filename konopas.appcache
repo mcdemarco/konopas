@@ -1,11 +1,11 @@
 CACHE MANIFEST
-# Fri Feb 19 00:49:00 EST 2016
+# Fri Feb 19 01:00:00 EST 2016
 
 CACHE:
 data/program.js
 data/people.js
 konopas.min.js
-skin/konopas.css
+skin/konopas.min.css
 skin/icons.png
 skin/Roboto300.ttf
 skin/Roboto500.ttf
