@@ -5,7 +5,7 @@ CACHE:
 data/program.js
 data/people.js
 konopas.min.js
-skin/skin.css
+skin/konopas.min.css
 skin/icons.png
 skin/Roboto300.ttf
 skin/Roboto500.ttf
