@@ -1,9 +1,10 @@
 CACHE MANIFEST
-# [insert mod-timestamp here]
+# 2016-04-16
 
 CACHE:
 data/program.js
 data/people.js
+data/neffa2016.png
 konopas.min.js
 skin/konopas.min.css
 skin/icons.png
