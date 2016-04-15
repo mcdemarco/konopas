@@ -8,7 +8,9 @@
 
 <!-- Android + favicon -->
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="shortcut icon" sizes="196x196" href="skin/favicon.196.png">
+<!-- link rel="shortcut icon" sizes="196x196" href="data/favicon.196.png" -->
+<link rel="shortcut icon" href="favicon.ico">
+
 
 <!-- iOS -->
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,12 +29,10 @@
 -->
 
 <!-- Windows Phone 8.1 -->
-<!--
 <meta name="msapplication-TileColor"         content="#ffffff">
-<meta name="msapplication-square70x70logo"   content="data/icon.ie.png">
-<meta name="msapplication-square150x150logo" content="data/icon.ie.png">
-<meta name="msapplication-square310x310logo" content="data/icon.ie.png">
--->
+<!-- <meta name="msapplication-square70x70logo"   content="data/icon.ie.png"> -->
+<meta name="msapplication-square150x150logo" content="data/neffa2016-150x150.png">
+<!-- <meta name="msapplication-square310x310logo" content="data/icon.ie.png"> -->
 
 <title>NEFFA 2016</title>
 
@@ -129,15 +129,19 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 <tr><td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1W.png">Concourse Level&nbsp;(1W)</a>
     <td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1E.png">Galleria Level&nbsp;(1E)</a>
 </table>
+-->
 
-<h2>Sample Links</h2>
+<h2>Quick Links</h2>
 <ul>
-<li><a href="http://example.com/">Newsletter</a>
-<li><a href="http://example.com/">Restaurant Guide</a> (PDF, 6MB)
-<li><a href="http://example.com/">Progress Report 5</a> (web page)
-<li><a href="http://example.com/">Code of Conduct</a> (PDF)
+	<li><a href="http://www.neffa.org/">NEFFA Website</a></li>
+	<li><a href="http://www.neffa.org/cgi-bin/public/viewsel.html">Schedule Grids</a></li>
+	<li><a href="http://www.neffa.org/cgi-bin/public/showperf.pl?INDEX=ALL">Performer Index</a></li>
+	<li><a href="http://www.neffa.org/prices.html">Hours and Prices</a></li>
+	<li><a href="http://neffa.org/cgi-bin/public/ratings.html">Rating Codes</a> (explanation of the event types and levels)</li> 
+	<li>Volunteering:  check with the volunteer table.</a></li>
 </ul>
 
+<!-- 
 <h2>Sample Quick Reference</h2>
 <dl class="quick-ref">
 <dt><b>Access/Handicapped Services</b>: see Info Desk near elevators
@@ -170,6 +174,7 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 var konopas = new KonOpas({
 	'id': 'neffa2016',
 	'default_duration': 0,
+	'tag_categories': ['type', 'level'],
 	'time_show_am_pm': true,
 	'show_all_days_by_default': true,
 	'use_server': false
@@ -188,8 +193,8 @@ konopas.set_program(program, {
             'categories': ['type', 'level'],
             'labels': {
                 'all_tags': 'All types & levels',
-                'Type': 'Type',
-                'Level': 'Level'
+                'type': 'Type',
+                'level': 'Level'
             }
         }
 });

@@ -48,7 +48,7 @@ dist/dev.html: index.html | dist
 dist/index.html: index.html | dist
 	sed 's/"konopas.js"/"konopas.min.js"/' $< > $@
 
-dist/favicon.ico: skin/favicon.ico | dist
+dist/favicon.ico: data/favicon.ico | dist
 	cp $< $@
 
 dist/konopas.appcache: konopas.appcache | dist
