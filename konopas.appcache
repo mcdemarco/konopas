@@ -1,18 +1,17 @@
 CACHE MANIFEST
-# 2016-04-16
+# 2016-04-16 21:56:00
 
 CACHE:
 data/program.js
 data/people.js
 data/neffa2016.png
+data/favicon.ico
 konopas.min.js
-skin/konopas.min.css
+skin/konopas.css
 skin/icons.png
 skin/Roboto300.ttf
 skin/Roboto500.ttf
 skin/Oswald400.ttf
-favicon.ico
-data/title.png
 
 NETWORK:
 *
