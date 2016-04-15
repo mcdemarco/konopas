@@ -176,8 +176,22 @@ var konopas = new KonOpas({
 });
 konopas.set_program(program, {
 	'day': {},
-	'area': {},
-	'tag': {}
+	'area': {
+            'loc_level': 0,
+            'labels': {
+                'all_areas': 'Everywhere',
+                'area': 'Other location'
+            },
+            'promote': ['High School', 'Middle School']
+  },
+	'tag': {
+            'categories': ['type', 'level'],
+            'labels': {
+                'all_tags': 'All types & levels',
+                'Type': 'Type',
+                'Level': 'Level'
+            }
+        }
 });
 konopas.set_people(people);
 konopas.set_view();
