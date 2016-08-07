@@ -8,10 +8,13 @@
 
 <!-- Android + favicon -->
 <meta name="mobile-web-app-capable" content="yes">
-<link rel="shortcut icon" sizes="196x196" href="skin/favicon.196.png">
+<link rel="shortcut icon" sizes="64x64" href="data/mac2-favicon-32.png">
 
 <!-- iOS -->
 <meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" sizes="180x180" href="data/mac2-black-180.png">
+
+
 <!--
 <link rel="apple-touch-icon"                 href="data/icon.apple.60.png">
 <link rel="apple-touch-icon" sizes="76x76"   href="data/icon.apple.76.png">
@@ -26,14 +29,11 @@
 -->
 
 <!-- Windows Phone 8.1 -->
-<!--
 <meta name="msapplication-TileColor"         content="#ffffff">
-<meta name="msapplication-square70x70logo"   content="data/icon.ie.png">
-<meta name="msapplication-square150x150logo" content="data/icon.ie.png">
-<meta name="msapplication-square310x310logo" content="data/icon.ie.png">
--->
+<meta name="msapplication-square150x150logo" content="data/mstile-150x150.png">
 
-<title>KonOpas Sample Guide</title>
+
+<title>KonOpas MidAmeriCon II Guide</title>
 
 <body><div id="top"></div>
 <div id="load_disable"></div>
@@ -44,9 +44,9 @@
 <div id="banner">
 <div id="server_connect"></div>
 
-<h1><a href="#info" alt="CONVENTION" title="CONVENTION">
-<img id="title-small" src="skin/konopas.png" style="width: 240px;">
-<img id="title" src="skin/konopas.png" style="width: 200px;"></a></h1>
+<h1><a href="#info" alt="MidAmeriCon II" title="MidAmeriCon II">
+	<img id="title-small" src="data/mac2-240.png" style="width: 240px;">
+	<img id="title" src="data/mac2-200.png" style="width: 200px;"></a></h1>
 
 <ul id="tabs">
 <li id="tab_star"><a href="#star" data-txt>My con</a>
@@ -87,7 +87,7 @@
 </div>
 
 <div id="info_view" class="view">
-<p>This is the program guide for <a href="http://example.org/">CONVENTION</a>. It should be suitable for use on most browsers and devices. It's an instance of <a href="http://konopas.org/">KonOpas</a>, an open-source project providing conventions with easy-to-use mobile-friendly guides.
+	<p>This is an alternative program guide for <a href="http://example.org/">MidAmeriCon II</a>. It should be suitable for use on most browsers and devices. It's an instance of <a href="http://konopas.org/">KonOpas</a>, an open-source project providing conventions with easy-to-use mobile-friendly guides.  In addition to KonOpas, the schedule is also available as a mobile app, <a href="https://events.grenadine.co/event-and-conferences-mobile-app/">Grenadine</a>, and a <a href="https://midamericon2.org/online-program-schedule/">web page</a>.
 
 <p><div id="last-updated">Program and participant data were last updated <span></span>.</div>
 
@@ -105,13 +105,13 @@
 if (navigator.standalone) document.getElementById('install-instructions').style.display = 'none';
 </script>
 
-<!-- SAMPLE SECTIONS FOR "INFO" VIEW, UNCOMMENT TO SEE
+<!-- SAMPLE SECTIONS FOR "INFO" VIEW, UNCOMMENT TO SEE -->
 <style>
-#map { width: 100% !important; }
-#map td { text-align: center !important; padding: 6px 32px; }
-#map a, #map span { font-family: 'Oswald'; font-weight: 400; font-size: 1.2em; cursor: pointer; }
-#map a:hover, #map span:hover { text-decoration: underline; }
-#map tr:hover, .quick-ref tr:hover { background: inherit !important; }
+.map { width: 100% !important; }
+.map td { text-align: center !important; padding: 6px 32px; }
+.map a, .map span { font-family: 'Oswald'; font-weight: 400; font-size: 1.2em; cursor: pointer; }
+.map a:hover, .map span:hover { text-decoration: underline; }
+.map tr:hover, .quick-ref tr:hover { background: inherit !important; }
 .quick-ref dt { margin: 6px 0 3px; }
 .quick-ref table { width: auto !important; border-spacing: 0; margin-bottom: 6px; }
 .quick-ref td { text-align: left !important; }
@@ -120,22 +120,47 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 .quick-ref td:nth-child(3) { padding-left: 0; }
 </style>
 
-<h2>Sample Maps</h2>
-<table id="map">
-<tr><td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-3W.png">Mezzanine Level&nbsp;(3W)</a>
-    <td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-3E.png">Conference Level&nbsp;(3E)</a>
-<tr><td colspan="2"><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-2.png">Lobby Level&nbsp;(2)</a>
-<tr><td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1W.png">Concourse Level&nbsp;(1W)</a>
-    <td><a class="popup-link" href="http://guide.2014.arisia.org/data/arisia-westin-1E.png">Galleria Level&nbsp;(1E)</a>
+<h2>Maps</h2>
+
+<h3>Kansas City Convention Center and Bartle Hall</h3>
+
+<table class="map">
+	<tr>
+		<td colspan="2"><a class="popup-link" href="data/map-west.png">West</a></td>
+	</tr>	
+	<tr>
+		<td><a class="popup-link" href="data/map-south.png">South</a></td>
+		<td><a class="popup-link" href="data/map-north.png">North</a></td>
+	</tr>
+	<tr>
+		<td colspan="2"><a class="popup-link" href="data/map-east.png">East</a></td>
+	</tr>	
 </table>
 
-<h2>Sample Links</h2>
+<h3>Kansas City Marriott Downtown</h3>
+
+<div class="map">
+	<a class="popup-link" href="data/map-mariott.png">Third Floor Meeting Rooms</a>
+</div>
+
+<h2>Links</h2>
 <ul>
-<li><a href="http://example.com/">Newsletter</a>
-<li><a href="http://example.com/">Restaurant Guide</a> (PDF, 6MB)
-<li><a href="http://example.com/">Progress Report 5</a> (web page)
-<li><a href="http://example.com/">Code of Conduct</a> (PDF)
+	<li><a href="https://midamericon2.org">Convention Website</a></li>
+	<li><a href="https://midamericon2.org/home/registration-hotel-member-information/facilitiestravellocal-area/new-local-information/">Local Information</a></li>
+	<li><a href="https://midamericon2.org/hospitality/">Hospitality</a> (Con Suite, Parties, &amp; Fan Tables)</li>
+	<li><a href="https://midamericon2.org/makers-and-crafting/">Makers &amp; Crafting</a></li>
 </ul>
+
+<!-- 
+<p>
+	MidAmeriCon II
+The 74thWorld Science Fiction Convention August 17–21, 2016
+Kansas City, Missouri
+midamericon2.org info@midamericon2.org
+MidAmeriCon II
+Mid American Science Fiction and Fantasy Conventions, Inc. P.O. Box 414175
+	Kansas City, MO 64141-4175
+</p>
 
 <h2>Sample Quick Reference</h2>
 <dl class="quick-ref">
