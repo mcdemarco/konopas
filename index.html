@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><!-- manifest="konopas.appcache" -->
+<html manifest="konopas.appcache">
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="skin/konopas.css">
@@ -106,11 +106,11 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 </script>
 
 <style>
-.map { width: 100% !important; padding:5px 25%; }
+.map { width: 100% !important; }
 .map, .map td { text-align: center !important; }
 .map a, .map span { font-family: 'Oswald'; font-weight: 400; font-size: 1.2em; cursor: pointer; }
 .map a:hover, .map span:hover { text-decoration: underline; }
-.map tr:hover, .quick-ref tr:hover { background: inherit !important; }
+ .map tr:hover, .quick-ref tr:hover { background: inherit !important; }
 .quick-ref dt { margin: 6px 0 3px; }
 .quick-ref table { width: auto !important; border-spacing: 0; margin-bottom: 6px; }
 .quick-ref td { text-align: left !important; }
@@ -202,7 +202,7 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 </table>
 
 <p><b>Conference Center Grand Ballroom/Pat Cadigan Theater</b> (Hugos &amp; Masquerade),<br/>
-<b>Conference Center Meeting Rooms</b> (Film, Events &amp; Programming):</p>
+<b>Conference Center Meeting Rooms</b> (Events, Filk, Film &amp; Programming):</p>
 
 <table class="map">
 	<tr>
@@ -214,12 +214,12 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 
 <h3>Kansas City Marriott Downtown</h3>
 
-<p><b>Third Floor Meeting Rooms</b> (Filk &amp; Workshops):</p>
+<p><b>Third Floor Meeting Rooms</b> (Late Night Filk &amp; Workshops):</p>
 
 <table class="map">
 	<tr>
 		<td>
-			<a class="popup-link" href="data/map-mariott.png">Marriott Meeting Rooms</a>
+			<a class="popup-link" href="data/map-marriott.png">Marriott Meeting Rooms</a>
 		</td>
 	</tr>
 </table>
@@ -263,9 +263,9 @@ Mid American Science Fiction and Fantasy Conventions, Inc. P.O. Box 414175
 
 </div><!-- /main -->
 
-<script src="https://mac2.grenadine.co/konopas/program.js"></script>
-<script src="https://mac2.grenadine.co/konopas/program/participants.js"></script>
-<script src="konopas.js"></script>
+<script src="data/program.js"></script>
+<script src="data/participants.js"></script>
+<script src="konopas.min.js"></script>
 <script>
 var konopas = new KonOpas({
 	'id': 'mac2',

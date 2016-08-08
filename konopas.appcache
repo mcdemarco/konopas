@@ -1,17 +1,28 @@
 CACHE MANIFEST
-# [insert mod-timestamp here]
+# Sun Aug 7 2016 21:45:00
 
 CACHE:
 data/program.js
-data/people.js
+data/participants.js
 konopas.min.js
-skin/konopas.min.css
+skin/konopas.css
 skin/icons.png
 skin/Roboto300.ttf
 skin/Roboto500.ttf
 skin/Oswald400.ttf
-favicon.ico
-data/title.png
+data/mac2-200.png
+data/mac2-240.png
+data/mac2-favicon-32.png
+data/map-east.png
+data/map-full.png
+data/map-grandballroom.png
+data/map-greathall.png
+data/map-levels.png
+data/map-marriott.png
+data/map-meetingrooms.png
+data/map-north.png
+data/map-south.png
+data/map-west.png
 
 NETWORK:
 *
