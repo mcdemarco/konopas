@@ -33,7 +33,7 @@
 <meta name="msapplication-square150x150logo" content="data/mstile-150x150.png">
 
 
-<title>KonOpas MidAmeriCon II Guide</title>
+<title>MidAmeriCon II Guide</title>
 
 <body><div id="top"></div>
 <div id="load_disable"></div>
@@ -277,7 +277,13 @@ var konopas = new KonOpas({
 konopas.set_program(program, {
 	'day': {},
 	'area': {},
-	'tag': {}
+	'tag': {
+		'min_count': 5,
+		'labels': {
+			'all_tags': 'All tags',
+			'tag': 'Tag'
+		}
+	}
 });
 konopas.set_people(people);
 konopas.set_view();
