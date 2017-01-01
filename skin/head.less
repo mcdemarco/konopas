@@ -111,7 +111,14 @@
 	.wide-only { display: none; }
 	#time, #scroll { left: @page-margin; }
 	#refresh.enabled { bottom: 20px; right: 20px; }
-	#banner { text-align: center; margin: 10px 0; }
+	#banner { text-align: center; margin: 10px 0; 
+		  h1 {background-color: @fg-highlight-more;
+		      margin: -10px -8px 0 -8px;
+		      border-bottom: 2px solid @bg-highlight;
+		      img {padding-top:8px;}
+		     }
+	}
+	
 	#title { display: none !important; }
 	#tabs {
 		padding-top: 5px !important;

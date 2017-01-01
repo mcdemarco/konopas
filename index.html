@@ -6,28 +6,31 @@
 <meta name="HandheldFriendly" content="true">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
 
-<!-- Android + favicon -->
-<meta name="mobile-web-app-capable" content="yes">
-<link rel="shortcut icon" sizes="196x196" href="data/arisia-planet.196.png">
-
-<!-- iOS -->
+<!-- new favicons -->
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="apple-touch-icon"                 href="data/arisia-planet.i60.png">
-<link rel="apple-touch-icon" sizes="76x76"   href="data/arisia-planet.i76.png">
-<link rel="apple-touch-icon" sizes="120x120" href="data/arisia-planet.i120.png">
-<link rel="apple-touch-icon" sizes="152x152" href="data/arisia-planet.i152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="data/arisia-touch.180.png">
+<link rel="shortcut icon" type="image/x-icon" href="data/arisia-favicon.ico">
+<link rel="icon" type="image/png" href="data/arisia-favicon.32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="data/arisia-favicon.16.png" sizes="16x16">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="data/safari-pinned-tab.svg" color="red">
+<meta name="theme-color" content="#ffffff">
+
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="192x192" href="data/arisia-touch.192.png">
+
+<meta name="msapplication-TileColor"         content="#f4c432">
+<meta name="msapplication-square70x70logo"   content="data/arisia-touch.512.png">
+<meta name="msapplication-square150x150logo" content="data/arisia-touch.512.png">
+<meta name="msapplication-square310x310logo" content="data/arisia-touch.512.png">
+
+<!-- old iOS splash pages -->
 <link rel="apple-touch-startup-image" href="data/arisia-splash.1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
 <link rel="apple-touch-startup-image" href="data/arisia-splash.2048x1496.png" media="(device-width: 1536px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
 <link rel="apple-touch-startup-image" href="data/arisia-splash.768x1004.png"  media="(device-width: 768px) and (orientation: portrait)">
 <link rel="apple-touch-startup-image" href="data/arisia-splash.1024x748.png"  media="(device-width: 768px) and (orientation: landscape)">
 <link rel="apple-touch-startup-image" href="data/arisia-splash.640x920.png"   media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)">
 <link rel="apple-touch-startup-image" href="data/arisia-splash.320x460.png"   media="(device-width: 320px)">
-
-<!-- Windows Phone 8.1 -->
-<meta name="msapplication-TileColor"         content="#f4c432">
-<meta name="msapplication-square70x70logo"   content="data/arisia-planet.ie.png">
-<meta name="msapplication-square150x150logo" content="data/arisia-planet.ie.png">
-<meta name="msapplication-square310x310logo" content="data/arisia-planet.ie.png">
 
 <!-- Info section styling; should be in the skin -->
 <style>
@@ -58,9 +61,10 @@
 <div id="banner">
 <div id="server_connect"></div>
 
-<h1><a href="#info" alt="Arisia 2017" title="Arisia 2017">
-<img id="title-small" src="data/arisia-title-small.png" style="width: 240px;">
-<img id="title" src="data/arisia-lens.png" style="width: 145px; margin: 27px;"></a></h1>
+<h1>
+	<a href="#info" alt="Arisia 2017" title="Arisia 2017">
+	<img id="title-small" src="data/arisia-title-small.png" style="width: 250px;">
+	<img id="title" src="data/arisia-lens.png" style="width: 200px; margin: auto;"></a></h1>
 
 <ul id="tabs">
 <li id="tab_star"><a href="#star" data-txt>My con</a>

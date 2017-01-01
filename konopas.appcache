@@ -1,9 +1,8 @@
 CACHE MANIFEST
-# Thu Dec 22 12:00:00 EST 2017
+# Fri Dec 30 23:59:04 EST 2017
 
 CACHE:
-http://zambia.arisia.org/konOpas.php
-#data/arisia2016.js
+data/arisia2017.js
 konopas.min.js
 skin/konopas.min.css
 skin/icons.png
