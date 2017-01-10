@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Fri Jan 6 15:45:01 EST 2017
+# Tue Jan 10 16:00:00 EST 2017
 
 CACHE:
 data/arisia2017.js
@@ -9,14 +9,14 @@ skin/icons.png
 skin/Roboto300.ttf
 skin/Roboto500.ttf
 skin/OpenSans-Semibold.ttf
-data/arisia-favicon.ico
-data/arisia-title-small.png
-data/arisia-lens.png
-data/arisia-westin-1E.png
-data/arisia-westin-1W.png
-data/arisia-westin-2.png
-data/arisia-westin-3E.png
-data/arisia-westin-3W.png
+data/arisia-favicon-2017.ico
+data/arisia-icon-2017.png
+data/arisia-title-2017.png
+data/arisia-westin-1E-2017.png
+data/arisia-westin-1W-2017.png
+data/arisia-westin-2-2017.png
+data/arisia-westin-3E-2017.png
+data/arisia-westin-3W-2017.png
 
 NETWORK:
 *
