@@ -7,8 +7,9 @@ tgtp="data/people.js"
 tm="$tgt.$ts"
 tmp="$tgtp.$ts"
 
-grenadine_prog_url="https://boskone.grenadine.co/Boskone_53/konopas/program.js"
-grenadine_peep_url="https://boskone.grenadine.co/Boskone_53/konopas/program/participants.js"
+# The underscore-to-hyphen may not be a permanent change.
+grenadine_prog_url="https://boskone.grenadine.co/en/boskone-54/konopas/program.js"
+grenadine_peep_url="https://boskone.grenadine.co/en/boskone-54/konopas/program/participants.js"
 
 cd /home/nesfa/konopas/
 
