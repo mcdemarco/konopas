@@ -1,17 +1,17 @@
 CACHE MANIFEST
-# Thu Jan 12 15:10:00 EST 2017
+# Tue Jan 2 22:17:00 EST 2018
 
 CACHE:
-data/arisia2017.js
+data/arisia2018.js
 konopas.min.js
 skin/konopas.min.css
 skin/icons.png
 skin/Roboto300.ttf
 skin/Roboto500.ttf
 skin/OpenSans-Semibold.ttf
-data/arisia-favicon-2017.ico
-data/arisia-icon-2017.png
-data/arisia-title-2017.png
+data/arisia-favicon.ico
+data/arisia-icon.png
+data/arisia-title.png
 data/arisia-westin-1E-2017.png
 data/arisia-westin-1W-2017.png
 data/arisia-westin-2-2017.png
