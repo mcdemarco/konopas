@@ -19,7 +19,6 @@
 "month_n": "{N, plural, =0{januari} =1{februari} =2{mars} =3{april} =4{maj} =5{juni} =6{juli} =7{augusti} =8{september} =9{oktober} =10{november} =11{december} other{???}}",
 "time_diff": "{T} {T_UNIT, plural, =0{sekunder} =1{minuter} =2{timmar} =3{dagar} =4{veckor} =5{månader} =6{år} other{???}} {T_PAST, select, true{sedan} other{från nu}}",
 
-"search_hint": "<b>Tips:</b> sökning sker efter hela ord i programpunkternas titel, beskrivning, taggar, sal och deltagare. Det går att använda * och ? som jokertecken och \"citerade ord\" för exakta fraser.",
 "search_example": "Prova till exempel <b>{X}</b>",
 "no_ko_id": "ID saknas! Ge konopas_set.id en unik identifierare.",
 "old_browser": "Tyvärr hanterar din webbläsare inte några av de JavaScript-funktioner som KonOpas behöver. Du behöver använda en annan webbläsare.",
@@ -46,23 +45,15 @@
 "Not connected": "Inte ansluten",
 "Click to close": "Klicka och stäng",
 "Server error": "Serverfel",
-"Hide comments": "Göm kommentarer",
-"Loading comments…": "Läser in kommentarer…",
 "Cancel": "Avbryt",
-"Post anonymously": "Skicka anonymt",
-"Hide from public": "Göm från allmänheten",
-"Posting…": "Skickar…",
-"Post comment": "Skicka kommentar",
-"Add a comment": "Lägg till kommentar",
 "Login to sync your data": "Logga in och synka dina data",
 "Logout": "Logga ut",
 
 "server_cmd_fail": "Kommandot \"{CMD}\" fallerade.",
-"show_comments": "Visa {N, plural, one{en kommentar} other{# kommentarer}}",
 "post_author": "{N} skrev…",
 "ical_login": "<span class=\"js-link\" onclick=\"var e=_el('login-popup-link');if(e)e.click();\">Logga in</span> och visa fler exportalternativ.",
 "ical_link": "Dina val finns som en iCal-kalender (.ics) på:",
 "ical_hint": "Märk att det kan dröja innan ändringar du gör i denna guide visas i din externa kalenderprogramvara.",
 "ical_make": "Du kan även visa dina val i din kalenderapp genom att {A_TAG}göra den tillgänglig</a> i iCals kalenderformat (.ics)",
-"login_why": "När du har bekräftat din e-postadress kan du synka dina uppgifter mellan olika klienter (även externa kalendrar) samt rösta på och kommentera programpunkter."
+"login_why": "När du har bekräftat din e-postadress kan du synka dina uppgifter mellan olika klienter (även externa kalendrar)."
 }

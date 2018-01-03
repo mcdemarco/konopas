@@ -19,7 +19,6 @@
 "month_n": "{N, plural, =0{tammikuuta} =1{helmikuuta} =2{maaliskuuta} =3{huhtikuuta} =4{toukokuuta} =5{kesäkuuta} =6{heinäkuuta} =7{elokuuta} =8{syyskuuta} =9{lokakuuta} =10{marraskuuta} =11{joulukuuta} other{???}}",
 "time_diff": "{T} {T_UNIT, plural, =0{sekuntia} =1{minuuttia} =2{tuntia} =3{päivää} =4{viikkoa} =5{kuukautta} =6{vuotta} other{???}} {T_PAST, select, true{sitten} other{tästä hetkestä}}",
 
-"search_hint": "<b>Vinkki:</b> Haku etsii sanoja otsikosta, tiedoista, tägeistä, paikoista ja osanottajista. Voit käyttää * ja ? -merkkejä villikortteina ja \"sanoja lainausmerkeissä\" täsmälliseen hakuun.",
 "search_example": "Esimerkiksi voisit kokeilla <b>{X}</b>",
 "no_ko_id": "Ei asetettua ID:tä. Aseta konopas_set.id uniikiksi tunnisteeksi.",
 "old_browser": "Selaimesi ei tue kaikkia KonOppaan tarvitsemia Javascript-ominaisuuksia. Ole hyvä ja kokeile toista selainta.",
@@ -46,23 +45,15 @@
 "Not connected": "Ei yhteyttä palvelimeen",
 "Click to close": "Klikkaa sulkeaksesi",
 "Server error": "Palvelinvirhe",
-"Hide comments": "Piilota kommentit",
-"Loading comments…": "Lataa kommentteja…",
 "Cancel": "Peruuta",
-"Post anonymously": "Jätä kommentti anonyymisti",
-"Hide from public": "Piilota kommentti",
-"Posting…": "Lähettämässä…",
-"Post comment": "Lähetä kommentti",
-"Add a comment": "Lisää kommentti",
 "Login to sync your data": "Kirjaudu sisään",
 "Logout": "Kirjaudu ulos",
 
 "server_cmd_fail": "Komento \"{CMD}\" epäonnistui.",
-"show_comments": "Näytä {N, plural, one{yksi kommentti} other{# kommenttia}}",
 "post_author": "{N} kirjoitti…",
 "ical_login": "Ole hyvä ja <span class=\"js-link\" onclick=\"var e=_el('login-popup-link');if(e)e.click();\">kirjaudu sisään</span> saadaksesi valintasi näkyville ulkopuolisissa kalenteriohjelmissa.",
 "ical_link": "Valintasi on saatavilla iCal (.ics) -kalenterina osoitteessa:",
 "ical_hint": "Huomaa että oppaassa tekemäsi muutokset saattavat päivittyä ulkopuolisiin kalenteriohjelmiin viiveellä.",
 "ical_make": "Katsellaaksesi valintojasi kalenteriohjelmassasi, voit myös <br class=\"wide-only\">{A_TAG}saada sen saataville</a> iCal (.ics) -muodossa.",
-"login_why": "Vahvistettuasi sähköpostiosoitteesi voit synkronoida valintasi eri päätelaitteiden (mukaanlukien kalenteriohjelmien) kanssa sekä äänestää ja kommentoida ohjelmia. Ulkoisille palveluille ei kirjautumisen jälkeen lähetetä mitään tietoja."
+"login_why": "Vahvistettuasi sähköpostiosoitteesi voit synkronoida valintasi eri päätelaitteiden (mukaanlukien kalenteriohjelmien). Ulkoisille palveluille ei kirjautumisen jälkeen lähetetä mitään tietoja."
 }
