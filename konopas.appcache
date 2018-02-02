@@ -1,9 +1,10 @@
 CACHE MANIFEST
-# 2017-04-04 21:25:00
+# 2018-01-01 14:25:00
 
 CACHE:
-data/neffa2017.js
-data/neffa2017.png
+data/neffa.js
+data/neffa2018.png
+data/neffa2018-long.png
 data/favicon.ico
 konopas.min.js
 skin/konopas.css
