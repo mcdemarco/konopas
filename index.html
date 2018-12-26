@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="konopas.appcache">
+<html> manifest="konopas.appcache">
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="skin/konopas.css">
@@ -404,7 +404,7 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 </div><!-- /main -->
 
 <script src="data/arisia2019.js"></script>
-<script src="konopas.min.js"></script>
+<script src="konopas.js"></script>
 <script>
 var konopas = new KonOpas({
     'id': 'arisia2019',
@@ -421,13 +421,12 @@ konopas.set_program(program, {
             'labels': {
                 'all_areas': 'Everywhere',
                 'area': 'Other location',
-                'M': 'Mezzanine (M)',
-                '4': '4th Floor (4)',
-                'ArisiaTV': '$ArisiaTV',
-                'Commonwealth Ballroom ABC': 'Commonwealth Ballroom',
+                'Mezz': 'Mezzanine (Mezz)',
+                '4th': '4th Floor (4th)',
+                'ArisiaTV': '$ArisiaTV'
             },
 						'regexp': { 'Statler': '^Statler' },
-            'promote': ['M', '4'],
+            'promote': ['Mezz', '4th'],
             'exclude': ['^Galleria -', '^Grand Prefunction$']
         },
         'tag': {
