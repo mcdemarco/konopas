@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Wed Dec 26 13:00:00 EST 2018
+# Sun Dec 30 22:20:00 EST 2018
 
 CACHE:
 data/arisia2019.js
@@ -12,11 +12,6 @@ skin/OpenSans-Semibold.ttf
 data/arisia-favicon.ico
 data/arisia-icon.png
 data/arisia-title.png
-data/arisia-westin-1E-2018.png
-data/arisia-westin-1W-2018.png
-data/arisia-westin-2-2018.png
-data/arisia-westin-3E-2018.png
-data/arisia-westin-3W-2018.png
 
 NETWORK:
 *
