@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Tue Jan 08 23:23:00 EST 2018
+# Mon Jan 14 13:40:00 EST 2018
 
 CACHE:
 data/arisia2019.js
@@ -14,6 +14,8 @@ data/arisia-icon.png
 data/arisia-title.png
 data/arisia-bpp-4thFloor.png
 data/arisia-bpp-Mezzanine.png
+data/arisia-bpp-Lobby.png
+data/arisia-bpp-Dealers.png
 
 NETWORK:
 *
