@@ -318,6 +318,7 @@ konopas.set_program(program, {
 			'promote': ['Free'],
 		}
 });
-konopas.set_people(people);
+if (typeof people != "undefined")
+	 konopas.set_people(people);
 konopas.set_view();
 </script>
