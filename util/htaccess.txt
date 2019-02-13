@@ -1,0 +1,9 @@
+
+# Before redirecting all http requests, we need to black-hole any manifest requests
+# over http with an explicit 410 because any https redirect causes obstinate caching.
+RewriteCond %{HTTPS} !=on
+RewriteRule ^konopas\.appcache$ - [G]
+
+# Now redirect all http requests.
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
