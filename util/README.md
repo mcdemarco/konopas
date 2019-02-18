@@ -22,9 +22,27 @@ https://docs.google.com/spreadsheet/ccc?key=0Auqwt8Hmhr0pdFRiR0hWWWRqRXVUSDVUY2R
 To use, modify the `$data` array in the PHP file to point to your spreadsheet's `key` and `gid`, and set `tgt` to point to the right path for the formatted data. In the source spreadsheet, field names are defined by the first row: a "." indicates sub-objects; use zero-indexed entries to generate arrays rather than objects. The number of sub-objects and array entries are not limited. Don't leave empty rows at the end of the sheets, and in arrays don't leave empty values in the middle.
 
 
-Apache config or .htaccess file for switching to https
--------------------------------------
+Apache config / .htaccess file
+--------------------------------------------
 
-Since some browsers will fail to save the manifest under http, it's a good idea to redirect all users to https.  However, if they had ever stored konopas as http, the redirect will be rejected and the cached data will continue to be used, even if it is a year out of date.  While it's possible to rename the manifest file to avoid this problem, that would require some rewriting of the code where the manifest is hard-coded, as well as rewriting of the cache manifest updater.  An easier solution is to redirect almost all traffic to https, but to return a 410 Gone error to a request for the manifest over http.
+The included .htaccess file contains directives for several circumstances described below.  If you need it, you should edit it to include only the sections you need, rename it to `.htaccess`, and put it in the root directory from which you're serving KonOpas' `index.html` file.
 
-The apache config to redirect to https and return the 410 on the old manifest location only is included in the file `htaccess.txt`.  To use the file, rename it to `.htaccess` and put it in the root directory from which you're serving KonOpas' `index.html` file.
+### Serving the cache manifest file
+
+Most Apache servers are already set up to serve your cache manifest file (`konopas.appcache`) correctly.  If browsers are not receiving this file, use the directive included.
+
+### Switching to HTTPS
+
+Since *some* browsers will fail to save the manifest under HTTP, it's a good idea to redirect all users to HTTPS.  If you don't have an SSL certificate for your website, you will need to get one.  Most hosting services provide an easy way for you to set up a free Let's Encrypt certificate.  Do that as soon as possible, since it can take some time.
+
+If your users ever used KonOpas at the HTTP URL, a simple HTTPS redirect will be rejected and the cached data will continue to be used, even if it is a year out of date.  While it's possible to rename the manifest file to avoid this problem, that would require some rewriting of KonOpas' code (where the manifest is hard-coded), as well as editing the cache manifest updater if you're using it.  An easier solution is to redirect almost all traffic to HTTPS, but to return a 410 Gone error to a request for the manifest over HTTP.  The directives to do so are included in the file.
+
+### Handling Chrome-specific bugs
+
+Since *some* browsers think "deprecated" means "[FUBAR](https://bugs.chromium.org/p/chromium/issues/detail?id=899752)", you may find yourself in a situation where users are seeing your new program data served live (no caching!) within a past year's index file (no cache updates ever) under HTTP---possibly also without your fonts if you have switched to HTTPS.  Depending on how much you change your index file from year to year as well as the cell or wireless coverage of your venue, users may not even notice the bug.
+
+If you can live with this situation, there is a directive in the file to fix the font issue alone.
+
+There is no way for KonOpas to convince Chrome to stop using the cached index file, so to fix the situation, you will need to switch to HTTPS following the instructions above, move your program data to a new file, say, `program2019.js`, update all the relevant files (`index.html`, `konopas.appcache`, and any scripts you may be running to populate and/or update your program), and put a message into the old program file (say, `program.js`) telling them to use the new HTTPS url.
+
+A sample `program.js` file for the purpose is included in this directory.  You should edit it very carefully to include your new URL in all places where it currently says `https://example.org`.
