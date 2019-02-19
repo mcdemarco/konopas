@@ -1,0 +1,20 @@
+# How to serve a manifest file if apache is not already set up to do so.
+AddType text/cache-manifest .appcache
+# How to turn off indexes
+Options -Indexes
+
+# This rest of this file includes some steps needed to redirect an existing http KonOpas instance 
+# to https without encountering every single Chrome bug and misconfiguration possible. 
+# It does not solve all Chrome problems. (See README for more details.)
+
+# Need to allow CORS so pages suffering Chrome bug #899752 can load fonts, etc.
+Header Set Access-Control-Allow-Origin "*"
+
+# Before redirecting all http requests, we need to black-hole any manifest requests
+# over http with an explicit 410 because any https redirect causes obstinate caching.
+RewriteCond %{HTTPS} !=on
+RewriteRule ^konopas\.appcache$ - [G]
+
+# Now redirect all other http requests.
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
