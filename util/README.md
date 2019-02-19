@@ -25,7 +25,7 @@ To use, modify the `$data` array in the PHP file to point to your spreadsheet's 
 Apache config / .htaccess file
 --------------------------------------------
 
-The included .htaccess file contains directives for several circumstances described below.  If you need it, you should edit it to include only the sections you need, rename it to `.htaccess`, and put it in the root directory from which you're serving KonOpas' `index.html` file.
+The included `htaccess.txt` file contains directives for several circumstances described below.  If you need it, you should edit it to include only the sections you need, rename it to `.htaccess`, and put it in the root directory from which you're serving KonOpas' `index.html` file.
 
 ### Serving the cache manifest file
 
