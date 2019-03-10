@@ -1,11 +1,13 @@
 CACHE MANIFEST
-# 2019-03-09 21:49:00
+# 2019-03-10 14:53:00
 
 CACHE:
 data/program.js
 data/cc37.png
 data/cc37-long.png
 data/favicon.ico
+data/mainFloor.png
+data/mezzanine.png
 konopas.min.js
 skin/konopas.css
 skin/icons.png
