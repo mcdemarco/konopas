@@ -61,7 +61,7 @@ function gdrive2json($key, $gid = '0') {
             if ($source_row['Day'] != '') {
                 $dest_row = array();
                 $pid = $prog_item_id++;
-                $dest_row['id'] = $pid;
+                $dest_row['id'] = "$pid";
                 $dest_row['title'] = $source_row['Title [All Times Eastern Daylight Time]'];
                 $dest_row['desc'] = isset($source_row['Panel Description']) ? $source_row['Panel Description'] : $source_row['Event Description'];
                 $dest_row['loc'] = array($source_row['Room']);
@@ -73,9 +73,9 @@ function gdrive2json($key, $gid = '0') {
                     foreach ($moderators as $mod) {
                         $mod2 = trim($mod);
                         if (isset($all_people[$mod2])) {
-                            $all_people[$mod2]['prog'][] = $pid;
+                            $all_people[$mod2]['prog'][] = "$pid";
                         } else {
-                            $all_people[$mod2] = array('id' => $all_people_id++, 'prog' => array($pid));
+                            $all_people[$mod2] = array('id' => $all_people_id++, 'prog' => array("$pid"));
                         }
                         $people[] = array('id' => $all_people[$mod2]['id'], 'name' => $mod2.' (moderator)');
                     }
@@ -86,9 +86,9 @@ function gdrive2json($key, $gid = '0') {
                     foreach ($participants as $part) {
                         $part2 = trim($part);
                         if (isset($all_people[$part2])) {
-                            $all_people[$part2]['prog'][] = $pid;
+                            $all_people[$part2]['prog'][] = "$pid";
                         } else {
-                            $all_people[$part2] = array('id' => $all_people_id++, 'prog' => array($pid));
+                            $all_people[$part2] = array('id' => $all_people_id++, 'prog' => array("$pid"));
                         }
                         $people[] = array('id' => $all_people[$part2]['id'], 'name' => $part2);
                     }
@@ -123,7 +123,7 @@ function gdrive2json($key, $gid = '0') {
     $programjs = json_encode($dest);
     $dest_people = array();
     foreach ($all_people as $name => $person) {
-        $dest_people[] = array('id' => $person['id'], 'name' => array($name), 'prog' => $person['prog']);
+        $dest_people[] = array('id' => $person['id'], 'name' => array($name, '', '', ''), 'prog' => $person['prog']);
     }
     $peoplejs = json_encode($dest_people);
 	return array('program' => $programjs, 'people' => $peoplejs);
