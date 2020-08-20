@@ -31,7 +31,7 @@
 
 $data = array(
 	'program' => array(
-		'key' => '2PACX-1vTd1W1TETQOk38gOHXEkBjcitwpd0_TGp5xVK0ASmkskKSnGYQWsM1TNd5rax8oQm-UQf6b2OVmaDmZ',
+		'key' => '2PACX-1vSiDrtz8-QSkA20XcURO-OoeYyX3CmEwMGFU-pOMioQQUz4R4dyf1-uIxLzAKUBaf8ucgXOqP168yNC',
 		'gid' => '0',
 		'tgt' => array('program' => '../data/program.js', 'people' => '../data/people.js')
 	)
