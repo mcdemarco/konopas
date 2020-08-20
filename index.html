@@ -162,6 +162,8 @@ if (navigator.standalone) document.getElementById('install-instructions').style.
 	<li><a href="https://columbus2020nasfic.org/code-of-conduct-anti-harassment-policy.html">Code of Conduct</a></li>
 </ul>
 
+</div>
+
 <div id="prog_ls" class="ls"><br><div class="ls_loading">Loading program data&hellip;</div></div>
 
 </div><!-- /main -->
@@ -179,15 +181,15 @@ var konopas = new KonOpas({
 });
 konopas.set_program(program, {
 		'day': {},
-		'area': {},
-		'tag': {
+		'area': {}/*
+,
+		'tag': {}
 			'min_count': 3,
 			'labels': {
 				'all_tags': 'All tags',
 				'tag': 'Select tag'
-			},
-			'promote': ['Free'],
-		}
+			}
+		}*/
 });
 if (typeof people != "undefined")
 	 konopas.set_people(people);
