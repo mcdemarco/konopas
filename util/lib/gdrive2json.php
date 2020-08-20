@@ -123,7 +123,7 @@ function gdrive2json($key, $gid = '0') {
     $programjs = json_encode($dest);
     $dest_people = array();
     foreach ($all_people as $name => $person) {
-        $dest_people[] = array('id' => $person['id'], 'name' => $name, 'prog' => $person['prog']);
+        $dest_people[] = array('id' => $person['id'], 'name' => array($name), 'prog' => $person['prog']);
     }
     $peoplejs = json_encode($dest_people);
 	return array('program' => $programjs, 'people' => $peoplejs);
