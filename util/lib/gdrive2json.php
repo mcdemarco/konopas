@@ -43,9 +43,9 @@ function gdrive2json($key, $gid = '0') {
     //$url = "https://docs.google.com/spreadsheets/d/$key/export?format=csv&id=$key&gid=404267302";
     //$url = "https://docs.google.com/spreadsheets/d/$key/gviz/tq?tqx=out:csv&sheet=404267302";
     $dest = array();
-    $prog_item_id = 0;
+    $prog_item_id = 1;
     $all_people = array();
-    $all_people_id = 0;
+    $all_people_id = 1;
     $url_array = array();
     $url_array[] = "https://docs.google.com/spreadsheets/d/e/$key/pub?output=csv&gid=672691432";
     $url_array[] = "https://docs.google.com/spreadsheets/d/e/$key/pub?output=csv&gid=404267302";
@@ -73,7 +73,7 @@ function gdrive2json($key, $gid = '0') {
                     foreach ($moderators as $mod) {
                         $mod2 = trim($mod);
                         if (isset($all_people[$mod2])) {
-                            $all_people[$mod2]['prog'] = $pid;
+                            $all_people[$mod2]['prog'][] = $pid;
                         } else {
                             $all_people[$mod2] = array('id' => $all_people_id++, 'prog' => array($pid));
                         }
@@ -86,7 +86,7 @@ function gdrive2json($key, $gid = '0') {
                     foreach ($participants as $part) {
                         $part2 = trim($part);
                         if (isset($all_people[$part2])) {
-                            $all_people[$part2]['prog'] = $pid;
+                            $all_people[$part2]['prog'][] = $pid;
                         } else {
                             $all_people[$part2] = array('id' => $all_people_id++, 'prog' => array($pid));
                         }
