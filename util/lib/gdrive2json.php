@@ -96,6 +96,26 @@ function gdrive2json($key, $gid = '0') {
                 if (count($people) > 0) {
                     $dest_row['people'] = $people;
                 }
+                switch ($source_row['Day']) {
+                    case 'FRIDAY':
+                        $date = '2020-08-21';
+                        break;
+                    case 'SATURDAY':
+                        $date = '2020-08-22';
+                        break;
+                    case 'SUNDAY':
+                        $date = '2020-08-23';
+                        break;
+                    default:
+                        $date = '';
+                }
+                if ($date != '') {
+                    $startDateTime = new DateTime($date.' '.$source_row['Start']);
+                    $endDateTime = new DateTime($date.' '.$source_row['End']);
+                    $dest_row['time'] = date_format($startDateTime, "H:i");
+                    $dest_row['mins'] = $startDateTime->diff($endDateTime)->i;
+                }
+                $dest_row['date'] = $date;
                 $dest[] = $dest_row;
             }
         }
