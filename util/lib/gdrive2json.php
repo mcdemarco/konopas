@@ -58,17 +58,18 @@ function gdrive2json($key, $gid = '0') {
         $csv = new parseCSV("$csv_str\n");
         $a = $csv->data;
         foreach ($a as $source_row) {
-            if ($source_row['Day'] != '') {
+            $title = $source_row['Title [All Times Eastern Daylight Time]'];
+            if ($source_row['Day'] != '' && $title != '') {
                 $dest_row = array();
                 $pid = $prog_item_id++;
                 $dest_row['id'] = "$pid";
-                $dest_row['title'] = $source_row['Title [All Times Eastern Daylight Time]'];
+                $dest_row['title'] = $title;
                 $dest_row['desc'] = isset($source_row['Panel Description']) ? $source_row['Panel Description'] : $source_row['Event Description'];
                 $dest_row['loc'] = array($source_row['Room']);
                 $people_names = array();
                 $moderator = $source_row['Moderator'];
                 $people = array();
-                if ($moderator != '' && substr($moderator, 1, 1) != '(' && $moderator != 'Precorded') {
+                if ($moderator != '' && substr($moderator, 0, 1) != '(' && $moderator != 'Prerecorded') {
                     $moderators = explode(',', $moderator);
                     foreach ($moderators as $mod) {
                         $mod2 = trim($mod);
@@ -85,12 +86,38 @@ function gdrive2json($key, $gid = '0') {
                     $participants = explode(',', $participant);
                     foreach ($participants as $part) {
                         $part2 = trim($part);
-                        if (isset($all_people[$part2])) {
-                            $all_people[$part2]['prog'][] = "$pid";
-                        } else {
-                            $all_people[$part2] = array('id' => $all_people_id++, 'prog' => array("$pid"));
+                        if ($part2 == '') {
+                            continue;
                         }
-                        $people[] = array('id' => $all_people[$part2]['id'], 'name' => $part2);
+                        $part3 = mb_ereg_replace('[(].*[)]', '', $part2, 'g');
+                        $part4 = explode('and', $part3);
+                        foreach($part4 as $part5) {
+                            $part5 = trim($part5);
+                            if ($part5 == '') {
+                                continue;
+                            }
+                            if (isset($all_people[$part5])) {
+                                $all_people[$part5]['prog'][] = "$pid";
+                            } else {
+                                $all_people[$part5] = array('id' => $all_people_id++, 'prog' => array("$pid"));
+                            }
+                        }
+                        if (isset($all_people[$part2])) {
+                            $people[] = array('id' => $all_people[$part2]['id'], 'name' => $part2);
+                        } else {
+                            $people[] = array('id' => $all_people_id++, 'name' => $part2);
+                        }
+                    }
+                }
+                if (substr($title, 0, 9) == '(Reading)') {
+                    $part = trim(substr($title, 9));
+                    if ($part != '') {
+                        if (isset($all_people[$part])) {
+                            $all_people[$part]['prog'][] = "$pid";
+                        } else {
+                            $all_people[$part] = array('id' => $all_people_id++, 'prog' => array("$pid"));
+                        }
+                        $people[] = array('id' => $all_people[$part]['id'], 'name' => $part);
                     }
                 }
                 if (count($people) > 0) {
@@ -123,7 +150,7 @@ function gdrive2json($key, $gid = '0') {
     $programjs = json_encode($dest);
     $dest_people = array();
     foreach ($all_people as $name => $person) {
-        $dest_people[] = array('id' => $person['id'], 'name' => array($name, '', '', ''), 'prog' => $person['prog']);
+        $dest_people[] = array('id' => $person['id'], 'name' => array($name), 'prog' => $person['prog']);
     }
     $peoplejs = json_encode($dest_people);
 	return array('program' => $programjs, 'people' => $peoplejs);
