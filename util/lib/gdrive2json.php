@@ -85,11 +85,12 @@ function gdrive2json($key, $gid = '0') {
                 if ($participant != '') {
                     $participants = explode(',', $participant);
                     foreach ($participants as $part) {
-                        $part2 = trim($part);
+                        $part2 = trim(mb_ereg_replace('  ', ' ', $part, 'g'));
                         if ($part2 == '') {
                             continue;
                         }
                         $part3 = mb_ereg_replace('[(].*[)]', '', $part2, 'g');
+                        $part3 = trim(mb_ereg_replace('  ', ' ', $part3, 'g'));
                         $part4 = explode(' and ', $part3);
                         foreach($part4 as $part5) {
                             $part5 = trim($part5);
@@ -112,7 +113,7 @@ function gdrive2json($key, $gid = '0') {
                         }
                     }
                 }
-                if (substr($title, 0, 9) == '(Reading)') {
+                if (substr($title, 0, 9) == '(Reading)' && $participant == '') {
                     $part = trim(substr($title, 9));
                     if ($part != '') {
                         $parts = explode(' and ', $part);
