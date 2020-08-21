@@ -69,7 +69,7 @@ function gdrive2json($key, $gid = '0') {
                 $people_names = array();
                 $moderator = $source_row['Moderator'];
                 $people = array();
-                if ($moderator != '' && substr($moderator, 0, 1) != '(' && $moderator != 'Prerecorded') {
+                if ($moderator != '' && substr($moderator, 0, 1) != '(' && $moderator != 'Precorded') {
                     $moderators = explode(',', $moderator);
                     foreach ($moderators as $mod) {
                         $mod2 = trim($mod);
@@ -90,9 +90,12 @@ function gdrive2json($key, $gid = '0') {
                             continue;
                         }
                         $part3 = mb_ereg_replace('[(].*[)]', '', $part2, 'g');
-                        $part4 = explode('and', $part3);
+                        $part4 = explode(' and ', $part3);
                         foreach($part4 as $part5) {
                             $part5 = trim($part5);
+                            if (substr($part5, 0, 15) == 'Guest of Honor:') {
+                                $part5 = trim(substr($part5, 15));
+                            }
                             if ($part5 == '') {
                                 continue;
                             }
@@ -112,12 +115,19 @@ function gdrive2json($key, $gid = '0') {
                 if (substr($title, 0, 9) == '(Reading)') {
                     $part = trim(substr($title, 9));
                     if ($part != '') {
-                        if (isset($all_people[$part])) {
-                            $all_people[$part]['prog'][] = "$pid";
-                        } else {
-                            $all_people[$part] = array('id' => $all_people_id++, 'prog' => array("$pid"));
+                        $parts = explode(' and ', $part);
+                        foreach($parts as $part2) {
+                            $part2 = trim($part2);
+                            if ($part2 == '') {
+                                continue;
+                            }
+                            if (isset($all_people[$part2])) {
+                                $all_people[$part2]['prog'][] = "$pid";
+                            } else {
+                                $all_people[$part2] = array('id' => $all_people_id++, 'prog' => array("$pid"));
+                            }
+                            $people[] = array('id' => $all_people[$part2]['id'], 'name' => $part2);
                         }
-                        $people[] = array('id' => $all_people[$part]['id'], 'name' => $part);
                     }
                 }
                 if (count($people) > 0) {
