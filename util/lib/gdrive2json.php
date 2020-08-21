@@ -50,6 +50,18 @@ function gdrive2json($key, $gid = '0') {
     $url_array[] = "https://docs.google.com/spreadsheets/d/e/$key/pub?output=csv&gid=672691432";
     $url_array[] = "https://docs.google.com/spreadsheets/d/e/$key/pub?output=csv&gid=404267302";
     $url_array[] = "https://docs.google.com/spreadsheets/d/e/$key/pub?output=csv&gid=1067836657";
+
+    $part_info_fname = "./lib/nasfic_participant_info.csv";
+    $handle = fopen($part_info_fname, "r");
+    $contents = fread($handle, filesize($part_info_fname));
+    fclose($handle);
+    $part_info_csv = new parseCSV($contents);
+    $part_info = $part_info_csv -> data;
+    $part_info_arr = array();
+    foreach($part_info as $part_info_row) {
+        $part_info_arr[$part_info_row["Name"]] = array("Image" => $part_info_row["Image"], "Bio" => $part_info_row["Bio"]);
+    }
+    
     foreach ($url_array as $url) {
 
         $rc = url_fetch($url, $csv_str);
@@ -161,7 +173,16 @@ function gdrive2json($key, $gid = '0') {
     $programjs = json_encode($dest);
     $dest_people = array();
     foreach ($all_people as $name => $person) {
-        $dest_people[] = array('id' => $person['id'], 'name' => array($name), 'prog' => $person['prog']);
+        $this_person = array('id' => $person['id'], 'name' => array($name), 'prog' => $person['prog']);
+        if (isset($part_info_arr[$name])) {
+            if (isset($part_info_arr[$name]["Bio"]) && $part_info_arr[$name]["Bio"] != '') {
+                $this_person["bio"] = $part_info_arr[$name]["Bio"];
+            }
+            if (isset($part_info_arr[$name]["Image"]) && $part_info_arr[$name]["Image"] != '') {
+                $this_person["links"] = array("img" => $part_info_arr[$name]["Image"]);
+            }
+        }
+        $dest_people[] = $this_person;
     }
     $peoplejs = json_encode($dest_people);
 	return array('program' => $programjs, 'people' => $peoplejs);
