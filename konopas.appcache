@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Mon Jan 20 12:45:00 EST 2020
+# Sat Jan 09 17:18:00 EST 2021
 
 CACHE:
 data/program.js
@@ -13,9 +13,6 @@ skin/Oswald400.ttf
 favicon.ico
 data/boskonelogo-small-400.png
 data/boskonelogo-small-480.png
-data/B57-Maps-Galleria.jpg
-data/B57-Maps-Harbor.jpg
-data/B57-Maps-Marina.jpg
 
 NETWORK:
 *

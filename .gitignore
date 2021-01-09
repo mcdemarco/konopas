@@ -1,5 +1,6 @@
 i18n/*.js
 node_modules
+package-lock.json
 tmp
 *.log
 data/program*
